@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="row container-fluid">
+
+            <div class="col-sm-4 ">
+                <div class="navbar-text pull-left" id = "margin">
+                    <a href="website-list.html">
+                        <span class = "glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </div>
+
+                <div class =" navbar-brand hidden-xs pull-right">
+                    <a href="website-list.html">
+                        <span class ="glyphicon glyphicon-plus"></span>
+                    </a>
+                </div>
+                <div class="navbar-header hidden-xs">
+                    <a class="navbar-brand">
+                        Websites
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-sm-8">
+
+                <div class ="navbar-brand pull-right">
+                    <a href="website-list.html">
+                        <span class ="glyphicon glyphicon-ok"></span>
+                    </a>
+                </div>
+
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        Edit Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row container-fluid">
+
+        <div class="col-sm-4 hidden-xs">
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a id ="cogs1" class ="glyphicon glyphicon-cog pull-right" href="website-edit.html" ></a>
+                    <a href="#">Blogging App</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"> Blogger</a>
+                    <a class ="glyphicon glyphicon-cog pull-right" href="website-edit.html" id ="cogs2"></a>
+                </li>
+                <li class="list-group-item">
+                    <a class ="glyphicon glyphicon-cog pull-right" href="website-edit.html" id ="cogs3"></a>
+                    <a href="#">Blogger App</a>
+                </li>
+                <li class="list-group-item">
+                    <a class ="glyphicon glyphicon-cog pull-right" href="website-edit.html" id ="cogs4"></a>
+                    <a href="#">Script Testing App</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-8">
+
+                <label> Website Name </label>
+                <input placeholder="Website Name"
+                       class="form-control"
+                       id ="website-name"/>
+
+                <label>Website Description</label>
+                <textarea placeholder="Website Description"
+                          class="form-control"
+                          id="website-description"></textarea>
+                <a href="website-list.html" class="btn btn-block btn-danger" role="button">Delete</a>
+
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <a href="profile.html">
+                <span class = "glyphicon glyphicon-user pull-right"></span>
+            </a>
+        </div>
+    </footer>
+
+    </body>
+</html>
