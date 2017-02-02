@@ -9,63 +9,74 @@
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
+    <div class="row container-fluid" >
 
-        <div class="navbar-text pull-right">
-            <a>
-                <span class = "glyphicon glyphicon-ok"></span>
+        <div class="navbar-text pull-left"id = "margin">
+            <a href="login.html">
+                <span class = "glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
         <div class="navbar-header">
             <a class="navbar-brand">
-                Profile
+                Mentor Mine
             </a>
         </div>
     </div>
 </nav>
 
 
-    <div class="row" id ="intro-container">
-        <div class="col-md-4"></div>
+<div class="container-fluid">
+    <h3>Profile</h3>
+    <label for="first">First Name</label>
+    <input id="first" class="form-control" type="text" placeholder="First Name"/>
 
-        <div class="col-md-4">
+    <label for="last">Last Name</label>
+    <input id="last" class="form-control" type="text" placeholder="Last Name"/>
 
-            <section class="intro-form">
-                <div class="well">
-                    <form class="form-horizontal">
-                        <h3>Profile</h3>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="first-name">First Name</label>
-                            <input type="text" class="form-control" id="first-name" placeholder="Alice">
-                        </div>
-                        <div class="form-group">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" class="form-control" id="last-name" placeholder="Wonderland">
-                        </div>
-                    </form>
-                    <a class="btn btn-primary btn-block"
-                       href="website-list.html">Websites</a>
-                    <a class="btn btn-danger  btn-block"
-                       href="login.html">Logout</a>
+    <label for="email">Email</label>
+    <input id="email" class="form-control" type="email" placeholder="Email"/>
 
+    <label>Username</label>
+    <input class="form-control" type="text" placeholder="Username"/>
 
-                </div>
-            </section>
+    <label>Password</label>
+    <input class="form-control" type="password" placeholder="Password"/>
+
+    <a class="btn btn-primary btn-block" href="website-list.html">
+        Websites
+    </a>
+
+    <a class="btn btn-danger btn-block" href="login.html">
+        Logout
+    </a>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row navbar-text text-center">
+            <div class="col-xs-3">
+                <a href="profile.html">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a>
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a>
+                    <span class="glyphicon glyphicon-star"></span>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a>
+                    <span class="glyphicon glyphicon-cloud"></span>
+                </a>
+            </div>
         </div>
     </div>
+</nav>
 
-<footer class="footer">
-    <div class="container-fluid">
-
-    </div>
-</footer>
 </body>
 </html>
