@@ -173,3 +173,23 @@ a:hover {
     padding-right: 15px;
     padding-top: 10px;
 }
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+
+
+
+
