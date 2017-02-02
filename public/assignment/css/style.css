@@ -70,7 +70,7 @@ margin-bottom: 60px;
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: skyblue;
+    background-color: royalblue;
     padding-top: 20px;
 }
 /*######*/
@@ -116,8 +116,8 @@ a{
     color: black;
 }
 .navbar-default {
-    background-color: #555555;
-    border-color: #e7e7e7;
+    background-color: royalblue;
+    border-color: transparent;
 }
 
 .navbar-default .navbar-brand {
