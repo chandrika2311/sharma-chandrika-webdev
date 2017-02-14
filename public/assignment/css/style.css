@@ -142,6 +142,10 @@ a:hover {
 #cogs1,#cogs2,#cogs3,#cogs4{
     padding-right: 10px;
 }
+#login-container{
+    padding-top: 10px;
+
+}
 #list{
     padding-left: 5px;
 }
