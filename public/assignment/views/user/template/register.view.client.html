@@ -23,21 +23,28 @@
                     <form class="form-horizontal">
                         <h3> New Account - Register </h3>
                         <div class="input-group">
+
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user" ></i> </span>
-                            <input id="email" type ="text" class="form-control" name="email" placeholder="Email">
+                            <input ng-model="reg.user.email"
+                                   id="email" type ="text"
+                                   class="form-control"
+                                   name="email"
+                                   placeholder="Email">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock" ></i> </span>
-                            <input id="pwd" type ="password" class="form-control" name="password"
+                            <input ng-model="reg.user.password"
+                                   id="pwd" type ="password" class="form-control" name="password"
                                    placeholder="Password">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock" ></i> </span>
-                            <input id="pwd2" type ="password" class="form-control" name="re-password"
+                            <input ng-model="reg.user.repassword"
+                                   id="pwd2" type ="password" class="form-control" name="re-password"
                                    placeholder="Repeat Password">
                         </div>
                         <div class="btn-block">
-                            <a href="#/profile" class="btn btn-success btn-lg btn-block" role="button">Register</a>
+                            <a ng-click="reg.register(user)" href="#/profile" class="btn btn-success btn-lg btn-block" role="button">Register</a>
                         </div>
 
                         <div class="btn-block">

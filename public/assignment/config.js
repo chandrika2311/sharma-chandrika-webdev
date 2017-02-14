@@ -8,16 +8,20 @@
     function Config($routeProvider) {
         $routeProvider
             .when("/login", {
-                templateUrl: "views/user/login.view.client.html",
+                templateUrl: "views/user/template/login.view.client.html",
                 controller: "LoginController",
-                controllerAs: "model" /** Design Pattern: controller can be refered by this name, this is used
+                controllerAs: "log" /** Design Pattern: controller can be refered by this name, this is used
                                          so no ambiguity between any data variables **/
             })
             .when("/profile", {
-                templateUrl: "views/user/profile.view.client.html"
+                templateUrl: "views/user/template/profile.view.client.html",
+                controller: "ProfileController",
+                controllerAs: "pro"
             })
             .when("/register", {
-                templateUrl: "views/user/register.view.client.html"
+                templateUrl: "views/user/template/register.view.client.html",
+                controller: "RegisterController",
+                controllerAs: "reg"
             })
             .when("/page-edit", {
                 templateUrl: "views/user/page-edit.view.client.html"
@@ -29,28 +33,28 @@
                 templateUrl: "views/user/page-new.view.client.html"
             })
             .when("/website-edit", {
-                templateUrl: "views/website/website-edit.view.client.html"
+                templateUrl: "views/website/template/website-edit.view.client.html"
             })
             .when("/website-list", {
-                templateUrl: "views/website/website-list.view.client.html"
+                templateUrl: "views/website/template/website-list.view.client.html"
             })
             .when("/website-new", {
-                templateUrl: "views/website/website-new.view.client.html"
+                templateUrl: "views/website/template/website-new.view.client.html"
             })
             .when("/widget-list", {
-                templateUrl: "views/widget/widget-list.view.client.html"
+                templateUrl: "views/widget/Template/widget-list.view.client.html"
             })
             .when("/widget-chooser", {
-                templateUrl: "views/widget/widget-chooser.view.client.html"
+                templateUrl: "views/widget/Template/widget-chooser.view.client.html"
             })
             .when("/widget-heading", {
-                templateUrl: "views/widget/widget-heading.view.client.html"
+                templateUrl: "views/widget/Template/widget-heading.view.client.html"
             })
             .when("/widget-image", {
-                templateUrl: "views/widget/widget-image.view.client.html"
+                templateUrl: "views/widget/Template/widget-image.view.client.html"
             })
             .when("/widget-youtube", {
-                templateUrl: "views/widget/widget-youtube.view.client.html"
+                templateUrl: "views/widget/Template/widget-youtube.view.client.html"
             })
 
 
