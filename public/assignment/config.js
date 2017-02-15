@@ -10,18 +10,18 @@
             .when("/login", {
                 templateUrl: "views/user/template/login.view.client.html",
                 controller: "LoginController",
-                controllerAs: "log" /** Design Pattern: controller can be refered by this name, this is used
+                controllerAs: "model" /** Design Pattern: controller can be refered by this name, this is used
                                          so no ambiguity between any data variables **/
             })
-            .when("/profile", {
+            .when("/profile/:uid", {
                 templateUrl: "views/user/template/profile.view.client.html",
                 controller: "ProfileController",
-                controllerAs: "pro"
+                controllerAs: "model"
             })
             .when("/register", {
                 templateUrl: "views/user/template/register.view.client.html",
                 controller: "RegisterController",
-                controllerAs: "reg"
+                controllerAs: "model"
             })
             .when("/page-edit", {
                 templateUrl: "views/user/page-edit.view.client.html"

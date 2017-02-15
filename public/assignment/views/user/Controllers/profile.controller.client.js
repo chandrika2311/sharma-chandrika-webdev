@@ -7,7 +7,7 @@
         .module("WebAppMaker")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController(){ /** no scope used any more**/
+    function ProfileController(UserService){ /** no scope used any more**/
         var vm = this; /**   this is the variable which sends data to the page and the
         page interacts with the data and send s it back       **/
 

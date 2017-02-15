@@ -9,7 +9,7 @@
         .module("WebAppMaker")
         .controller("LoginController", LoginController);
 
-    function LoginController(UserService){ /** no scope used any more**/
+    function LoginController(UserService, $location){ /** no scope used any more**/
         var vm = this; /**   this is the variable which sends data to the page and the
                                     page interacts with the data and send s it back       **/
         vm.login = login;
@@ -20,6 +20,11 @@
 
         function login(user) {
             var loginUser = UserService.findUserByCredentials(user.username, user.password);
+            if(loginUser != null) {
+                $location.url('/profile/' + loginUser._id);
+            } else {
+                vm.error = 'user not found';
+            }
         }
     }
 

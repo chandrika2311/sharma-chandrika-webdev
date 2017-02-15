@@ -15,11 +15,44 @@
         ]
         var api = {
             "users": users,
-            "findUserByCredentials": findUserByCredentials()
+            "createUser": createUser,
+            "findUserById": findUserById,
+            "findUserByUsername": findUserByUsername,
+            "updateUser": updateUser,
+            "deleteUser": deleteUser,
+            "findUserByCredentials": findUserByCredentials
         };
         return api;
         /** this API object has attributes if userservice instance is used it will return the object of api.
          this api object is bound with local function**/
+
+        function createUser(user) {
+            if (findUserByUsername(user.username) == null){
+                users.push(user);
+                return angular.copy(user.username);
+            }
+            return null;
+        }
+
+        function findUserByUsername(username){
+            for (var u in users){
+                var user = users[u];
+                if (user.username === username)
+                {
+                    return angular.copy(user);
+                }
+            } return null;
+        }
+        function findUserById(userId){
+            for (var u in users) {
+                var user = users[u];
+                if (user._id === userId) {
+                    return angular.copy(user);
+                }
+            }
+            return null;
+        }
+
         function findUserByCredentials(username, password) {
             for (var u in users) {
                 var user = users[u];
@@ -28,6 +61,32 @@
                     return angular.copy(user);
                 }
 
+            }
+            return null;
+        }
+        function updateUser(userId, user) {
+            for (var u in users) {
+                var old_user = users[u];
+                if (old_user._id === userId)
+                {
+                    users[u].firstName = user.firstName;
+                    users[u].lastName = user.lastName;
+                    users[u].username = user.username;
+                    users[u].password = user.password;
+                    return angular.copy(user);
+                }
+            }
+            return null;
+        }
+
+        function deleteUser(userId) {
+            for (var u in users) {
+                var old_user = users[u];
+                if (old_user._id === userId)
+                {
+                    users.pop(users[u]);
+                    return angular.copy(old_user);
+                }
             }
             return null;
         }
