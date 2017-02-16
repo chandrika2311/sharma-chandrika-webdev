@@ -8,7 +8,7 @@
         .module("WebAppMaker")
         .controller("RegisterController", RegisterController);
 
-    function RegisterController(UserService){ /** no scope used any more**/
+    function RegisterController(UserService, $location){ /** no scope used any more**/
     var vm = this; /**   this is the variable which sends data to the page and the
      page interacts with the data and send s it back       **/
 
@@ -21,11 +21,14 @@
 
         function register(user) {
             var loginUser = UserService.createUser(user);
-            if(loginUser == null) {
-                vm.error = "User already exists";
-            } else {
-                vm.message = "user successfully created";
+            if(loginUser != null) {
+
+                if(loginUser != null) {
+                    $location.url('/user/' + user._id);}
+                else {vm.error = "User Already Exists";}
             }
+
+
         }
     }
 })();

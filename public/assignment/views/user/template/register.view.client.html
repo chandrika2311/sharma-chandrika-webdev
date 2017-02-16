@@ -7,29 +7,56 @@
 
                     <form class="form-horizontal">
                         <h3> New Account - Register </h3>
-                        <div class="input-group">
 
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user" ></i> </span>
-                            <input ng-model="reg.user.email"
+
+                            <label for="username"> First Name  </label>
+                            <input ng-model="model.user.firstname"
+                                   id="firstname" type ="text"
+                                   class="form-control"
+                                   name="firstname"
+                                   placeholder="First Name">
+
+
+
+                            <label for="username"> Last Name  </label>
+                            <input ng-model="model.user.lastname"
+                                   id="lastname" type ="text"
+                                   class="form-control"
+                                   name="lastname"
+                                   placeholder="Last Name">
+
+
+
+                            <label for="username"> Username  </label>
+                            <input ng-model="model.user.username"
+                                   id="username" type ="text"
+                                   class="form-control"
+                                   name="username"
+                                   placeholder="Username">
+
+
+
+                            <label for="email"> Email  </label>
+                            <input ng-model="model.user.email"
                                    id="email" type ="text"
                                    class="form-control"
                                    name="email"
                                    placeholder="Email">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock" ></i> </span>
-                            <input ng-model="reg.user.password"
-                                   id="pwd" type ="password" class="form-control" name="password"
+
+
+                            <label for="email"> Password  </label>
+                            <input ng-model="model.user.password"
+                                   id="pwd" type ="text" class="form-control" name="password"
                                    placeholder="Password">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock" ></i> </span>
-                            <input ng-model="reg.user.repassword"
-                                   id="pwd2" type ="password" class="form-control" name="re-password"
+
+
+                            <label for="repassword"> Repeat Password  </label>
+                            <input ng-model="model.user.repassword"
+                                   id="repassword" type ="text" class="form-control" name="re-password"
                                    placeholder="Repeat Password">
-                        </div>
+
                         <div class="btn-block">
-                            <a ng-click="reg.register(user)" href="#/profile" class="btn btn-success btn-lg btn-block" role="button">Register</a>
+                            <a ng-click="model.register(user)" class="btn btn-success btn-lg btn-block" role="button">Register</a>
                         </div>
 
                         <div class="btn-block">
@@ -45,7 +72,9 @@
 </div>
 <footer class="footer">
     <div class="container-fluid">
-
+        <a href="#/user/{{model.user._id}}">
+            <span class = "glyphicon glyphicon-user pull-right"></span>
+        </a>
     </div>
 </footer>
 

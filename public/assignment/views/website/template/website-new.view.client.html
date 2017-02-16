@@ -3,12 +3,12 @@
     <div class="row container-fluid">
         <div class="col-sm-4">
             <div class="navbar-text pull-left hidden-xs">
-                <a href="website-list.view.client.html">
+                <a href="#/user/{{model.userId}}/website">
                     <span class = "glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
             <div class ="navbar-text pull-right hidden-xs">
-                <a href="website-new.view.client.html">
+                <a href="#/user/{{model.userId}}/website/new">
                     <span class ="glyphicon glyphicon-plus"></span>
                 </a>
             </div>
@@ -20,12 +20,12 @@
         </div>
         <div class="col-sm-8">
             <div class="navbar-text pull-left visible-xs">
-                <a href="website-list.view.client.html">
+                <a href="#/user/{{model.userId}}/website">
                     <span class = "glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
             <div class ="navbar-text pull-right">
-                <a href="website-list.view.client.html">
+                <a href="#">
                     <span class ="glyphicon glyphicon-ok"></span>
                 </a>
             </div>
@@ -44,35 +44,31 @@
 <div class="row container-fluid">
     <div class="col-sm-4 hidden-xs">
         <ul class="list-group">
-            <li class="list-group-item">
-                <a id ="cogs4"class ="glyphicon glyphicon-cog pull-right" href="website-edit.view.client.html"></a>
-                <a href="../views/page/page-list.view.client.html">Blogging App</a>
-            </li>
-            <li class="list-group-item">
-                <a href="../views/page/page-list.view.client.html"> Blogger</a>
-                <a id ="cogs1"class ="glyphicon glyphicon-cog pull-right" href="website-edit.view.client.html"></a>
-            </li>
-            <li class="list-group-item">
-                <a id ="cogs2"class ="glyphicon glyphicon-cog pull-right" href="website-edit.view.client.html"></a>
-                <a href="../views/page/page-list.view.client.html">Blogger App</a>
-            </li>
-            <li class="list-group-item">
-                <a id ="cogs3"class ="glyphicon glyphicon-cog pull-right" href="website-edit.view.client.html"></a>
-                <a href="../views/page/page-list.view.client.html">Script Testing App</a>
+            <li ng-repeat="website in model.websites" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-10">
+                        {{website.name}}
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
     <div class="col-sm-8">
         <div class="container-fluid">
         <label> Website Name </label>
-        <input placeholder="Website Name"
+        <input ng-model="website.name"
+                placeholder="Website Name"
                class="form-control"
                id ="website-name"/>
         <label>Website Description</label>
-        <textarea placeholder="Website Description"
+        <textarea ng-model="website.description"
+                placeholder="Website Description"
                   class="form-control"
                   id="website-description"></textarea>
-        <a href="#" class="btn btn-block btn-primary" role="button">Create</a>
+        <a ng-click = "model.createWebsite(website)" class="btn btn-block btn-primary" role="button">Create</a>
 
         </div>
     </div>
@@ -81,8 +77,9 @@
 
 <footer class="footer">
     <div class="container-fluid">
-        <a href="../views/user/profile.view.client.html">
+        <a href="#/user/{{model.user._id}}">
             <span class = "glyphicon glyphicon-user pull-right"></span>
         </a>
     </div>
 </footer>
+

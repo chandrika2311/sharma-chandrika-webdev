@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="navbar-text pull-left" id = "margin">
-            <a href="page-list.view.client.html">
+            <a href="/user/{{model.userId}}/website">
                 <span class = "glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
@@ -23,23 +23,25 @@
 
 <div class="container-fluid">
         <label> Name </label>
-        <input placeholder="Page Name"
+        <input ng-model= "model.page.name"
+               placeholder="Page Name"
                class="form-control"
                id ="website-name"/>
 
         <label>Title</label>
-        <input placeholder="Title"
+        <textarea ng-model="model.page.description"
+                  placeholder="Title"
                   class="form-control"
-                  id="title-page"></input>
-        <a href="page-list.view.client.html" class="btn btn-block btn-danger" role="button">Delete</a>
+                  id="title-page"></textarea>
 
+        <a ng-click = "model.deletePage()" class="btn btn-block btn-danger" role="button">Delete</a>
     </div>
 </div>
 
 
 <footer class="footer">
     <div class="container-fluid">
-        <a href="../views/user/profile.view.client.html">
+        <a href="#/user/{{model.userId}}">
             <span class = "glyphicon glyphicon-user pull-right"></span>
         </a>
     </div>

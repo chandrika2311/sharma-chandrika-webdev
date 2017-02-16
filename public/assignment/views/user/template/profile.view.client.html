@@ -1,14 +1,8 @@
-
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="row container-fluid" >
-        <div class ="navbar-brand pull-right">
-            <a href="#/profile">
-                <span class ="glyphicon glyphicon-ok"></span>
-            </a>
-        </div>
-        <div class="navbar-text pull-left"id = "margin">
-            <a href="#/login">
-                <span class = "glyphicon glyphicon-chevron-left"></span>
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a ng-click="model.update(model.user)">
+                <span class="glyphicon glyphicon-ok"></span>
             </a>
         </div>
         <div class="navbar-header">
@@ -20,17 +14,25 @@
 </nav>
 
 
-<div class="row container-fluid" id ="login-container">
-    <label for="first">First Name</label>
 
-    <input ng-model="pro.user.firstname"
+<div class="container-fluid">
+        <div class="alert alert-danger" ng-show="model.error">
+            {{model.error}}
+        </div>
+
+    <div class="alert alert-success" ng-show="model.message">
+        {{model.message}}
+    </div>
+<div class = container>
+    <label for="first">First Name</label>
+    <input ng-model="model.user.firstName"
            id="first"
            class="form-control"
            type="text"
            placeholder="First Name"/>
 
     <label for="last">Last Name</label>
-    <input ng-model="model.user.lastname"
+    <input ng-model="model.user.lastName"
            id="last"
            class="form-control"
            type="text"
@@ -44,12 +46,18 @@
            placeholder="Email"/>
 
     <label>Username</label>
-    <input ng-model="model.user.username" class="form-control" type="text" placeholder="Username"/>
+    <input ng-model="model.user.username"
+           class="form-control"
+           type="text"
+           placeholder="Username"/>
 
     <label>Password</label>
-    <input ng-model="model.user.password"class="form-control" type="password" placeholder="Password"/>
+    <input ng-model="model.user.password"
+           class="form-control"
+           type="password"
+           placeholder="Password"/>
 
-    <a class="btn btn-primary btn-block" href="#/website-list">
+    <a href="#/user/{{model.user._id}}/website" class="btn btn-success btn-block">
         Websites
     </a>
 
@@ -57,3 +65,12 @@
         Logout
     </a>
 </div>
+</div>
+
+<footer class="footer">
+    <div class="container-fluid">
+        <a href="#/user/{{model.user._id}}">
+            <span class = "glyphicon glyphicon-user pull-right"></span>
+        </a>
+    </div>
+</footer>

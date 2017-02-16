@@ -3,10 +3,14 @@ body {
     background-size: cover;
     padding-top: 70px;
 }
-body > .container{
-    padding-top: 60px;
-}
 
+.alert-success {
+    color: #3c763d;
+    padding: 5px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    margin: 0px;
+}
 .jumbotron{
     margin-left: 1px;
     margin-right: 1px;
@@ -67,18 +71,10 @@ margin-bottom: 60px;
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 40px;
     background-color: goldenrod;
     padding-top: 20px;
-
 }
-/*######*/
-/*navbar header
-.container-fluid>.navbar-header{
-    margin-right: 5px;
-    margin-left: 5px;
-}*/
 .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
@@ -102,36 +98,37 @@ margin-bottom: 60px;
     border-left: 1px solid lightgray;
 }
 .container {
-
     padding-left: 5px;
-
-
     padding-top: 1px;
 }
+
 .list-group-item{
     background-color: transparent;
     border-color: transparent;
 }
+
 a{
     color: black;
 }
 .navbar-default {
     background-color: goldenrod;
+    color: goldenrod;
     border-color: transparent;
 }
 
 .navbar-default .navbar-brand {
-    color: white;
+    color: royalblue;
 }
-
-.navbar a {
-    color: white;
+.container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: -15px;
+    margin-left: -15px;
+    background: goldenrod;
 }
+.row.container-fluid {
+    padding-right: -15px;
+    padding-left: -15px;
+    padding-top: 0px;
 
-.container-fluid{
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 a:hover {
     color: darkgray;
@@ -196,16 +193,21 @@ label {
 
     }
 }
-
 .glyphicon-user:before {
     content: "\e008";
     color: white;
 }
-#profile-container{
-    padding-top: 5px;
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-top: 5px
 }
-/**.h1, .h2, .h3, h1, h2, h3 {
-    margin-top: 70px;
-    margin-bottom: 10px;
+
+.h1, h1 {
+    font-size: 36px;
+    margin-top: 10px;
 }
-**/
+body {
+    margin: 0;
+    padding-top: 40px;
+}
