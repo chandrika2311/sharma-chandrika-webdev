@@ -1,49 +1,8 @@
-
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="row container-fluid">
-        <div class="navbar-text pull-left" id = "margin">
-            <a href="widget-list.view.client.html">
-                <span class = "glyphicon glyphicon-chevron-left"></span>
-            </a>
-        </div>
-        <div class =" navbar-brand pull-right">
-            <a href="widget-list.view.client.html">
-                <span class ="glyphicon glyphicon-ok"></span>
-            </a>
-        </div>
-        <div class="navbar-header">
-            <a class="navbar-brand">
-                Edit Widget
-            </a>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid">
-    <label> Name </label>
-    <input placeholder="Page Name"
-           class="form-control"
-           id ="website-name"/>
-
-    <label>Text</label>
-    <textarea placeholder="Title"
-           class="form-control"
-           id="title-page"></textarea>
-
-    <label>Size</label>
-    <input placeholder="Size"
-           class="form-control"
-           id ="size"/>
-    <a href="widget-list.view.client.html" class="btn btn-block btn-danger" role="button">Delete</a>
+<div ng-switch="widget.size">
+    <h1 ng-switch-when="1">{{widget.text}} {{widget.size}}</h1>
+    <h2 ng-switch-when="2">{{widget.text}} {{widget.size}}</h2>
+    <h3 ng-switch-when="3">{{widget.text}} {{widget.size}}</h3>
+    <h4 ng-switch-when="4">{{widget.text}} {{widget.size}}</h4>
+    <h5 ng-switch-when="5">{{widget.text}} {{widget.size}}</h5>
+    <h6 ng-switch-when="6">{{widget.text}} {{widget.size}}</h6>
 </div>
-</div>
-
-
-<footer class="footer">
-    <div class="container-fluid">
-        <a href="../views/user/profile.view.client.html">
-            <span class = "glyphicon glyphicon-user pull-right"></span>
-        </a>
-    </div>
-</footer>
-

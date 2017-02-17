@@ -12,7 +12,7 @@
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;
         vm.pageId = $routeParams.pid;
-        vm.updatePage = updatePage();
+
 
 
         function init() {
@@ -27,7 +27,7 @@
             $location.url("/user/"+vm.userId+"/website"+vm.websiteId+"/page");
         };
         function updatePage() {
-            PageService.updatePage(vm.pageId,vm.page);
+            PageServices.updatePage(vm.pageId,vm.page);
             $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
         };
     }

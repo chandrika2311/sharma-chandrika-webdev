@@ -8,7 +8,9 @@
                     <form class="form-horizontal">
                         <h3> New Account - Register </h3>
 
-
+                        <div class="alert alert-danger" ng-show="model.error">
+                            {{model.error}}
+                        </div>
                             <label for="username"> First Name  </label>
                             <input ng-model="model.user.firstname"
                                    id="firstname" type ="text"
@@ -19,7 +21,7 @@
 
 
                             <label for="username"> Last Name  </label>
-                            <input ng-model="model.user.lastname"
+                            <input ng-model="user.lastname"
                                    id="lastname" type ="text"
                                    class="form-control"
                                    name="lastname"
@@ -28,7 +30,7 @@
 
 
                             <label for="username"> Username  </label>
-                            <input ng-model="model.user.username"
+                            <input ng-model="user.username"
                                    id="username" type ="text"
                                    class="form-control"
                                    name="username"
@@ -37,7 +39,7 @@
 
 
                             <label for="email"> Email  </label>
-                            <input ng-model="model.user.email"
+                            <input ng-model="user.email"
                                    id="email" type ="text"
                                    class="form-control"
                                    name="email"
@@ -45,13 +47,13 @@
 
 
                             <label for="email"> Password  </label>
-                            <input ng-model="model.user.password"
+                            <input ng-model="user.password"
                                    id="pwd" type ="text" class="form-control" name="password"
                                    placeholder="Password">
 
 
                             <label for="repassword"> Repeat Password  </label>
-                            <input ng-model="model.user.repassword"
+                            <input ng-model="user.repassword"
                                    id="repassword" type ="text" class="form-control" name="re-password"
                                    placeholder="Repeat Password">
 

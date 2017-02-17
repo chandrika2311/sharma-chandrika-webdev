@@ -26,11 +26,13 @@
 
         function createUser(user) {
             if (findUserByUsername(user.username) == null)
-            {
+            { var newuser = {
+                username: user.username,
+                password : user.password,
+                _id : (new Date()).getTime().toString()
 
-                user._id = (new Date()).getTime().toString();
-                    users.push(user);
-                return angular.copy(user.username);
+            }; users.push(newuser);
+                return angular.copy(newuser);
             }
             return null;
         }
@@ -54,14 +56,13 @@
             return null;
         }
 
-        function findUserByCredentials(username, password) {
+        function findUserByCredentials(username, password){
             for (var u in users) {
                 var user = users[u];
                 if (user.username === username &&
                     user.password === password) {
                     return angular.copy(user);
                 }
-
             }
             return null;
         }

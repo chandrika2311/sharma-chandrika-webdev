@@ -14,7 +14,7 @@
             {_id: "543", name: "Post 3", websiteId: "456", "description": "Lorem"},
             {_id: "320", name: "Post 1", websiteId: "567", "description": "Lorem"},
             {_id: "430", name: "Post 2", websiteId: "567", "description": "Lorem"},
-            {_id: "540", name: "Post 3", websiteId: "567", "description": "Lorem"},
+            {_id: "540", name: "Post 3", websiteId: "567", "description": "Lorem"}
         ];
         var api = {
             "pages" : pages,
@@ -28,6 +28,7 @@
         return api;
         function createPage(websiteId, page) {
             page._id = (new Date()).getTime().toString();
+            page.websiteId = websiteId;
             pages.push(page);
         }
 
