@@ -16,14 +16,18 @@
     </div>
 </nav>
 
+
 <div class="container-fluid"
-     ng-include="model.getEditorTemplateUrl(widget.widgetType)">
+     ng-include="model.getEditorTemplateUrl(model.widget.widgetType)">
+
 </div>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
+<nav class="navbar navbar-default navbar-fixed-bottom page-list">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Footer</a>
+        <div class="navbar-text pull-right page-text">
+            <a href="#/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
         </div>
     </div>
 </nav>

@@ -1,7 +1,7 @@
 /**
  * Created by chandrika2311 on 2/14/17.
 
-(function () {
+ (function () {
     angular
         .module("WebAppMaker")
         .factory("WidgetServices", WidgetServices);
@@ -54,10 +54,10 @@
      updateWidget(widgetId, widget) - updates the widget in local widgets array whose _id matches the widgetId parameter
      deleteWidget(widgetId) - removes the widget from local widgets array whose _id matches the widgetId parameter**/
 
-    (function () {
-        angular
-            .module("WebAppMaker")
-            .service("WidgetService", WidgetService);
+(function () {
+    angular
+        .module("WebAppMaker")
+        .service("WidgetService", WidgetService);
     function WidgetService() {
         var widgets =
             [
@@ -79,6 +79,41 @@
             "deleteWidget": deleteWidget
         };
         return api;
+
+        function createWidgets(pageId,widget) {
+
+            switch (widget.widgetType) {
+                case "HEADING":
+                    var newWidget ={
+                        _id     :  widget._id,
+                        pageId  : pageId,
+                        text    : "CAT & DOG <3 <3",
+                        widgetType: "HEADING",
+                        size    : 3};
+                    widgets.push(newWidget);
+                    break;
+                case "IMAGE":
+                    var newWidget ={
+                        _id     :  widget._id,
+                        pageId  : pageId,
+                        url     : "https://www.youtube.com/watch?v=wj3BILPQoCo",
+                        widgetType : "IMAGE",
+                        width : "100%"};
+                    widgets.push(newWidget);
+                    break;
+                case "YOUTUBE":
+                    var newWidget ={
+                        _id     :  widget._id,
+                        pageId  : pageId,
+                        widgetType: "YOUTUBE",
+                        url     : "https://image.shutterstock.com/z/stock-photo-blue-eyed-cat-259729697.jpg",
+                        width   : "100%"};
+                    widgets.push(newWidget);
+                    break;
+            }
+
+        }
+
         function findWidgetsByPageId(pageId){
             var widg = [];
             for(var w in widgets) {
@@ -87,12 +122,6 @@
                 }
             }return widg;
         }
-        function createWidgets(pageId,widget) {
-                 var newwidget ={
-                     _id :  (new Date()).getTime().toString(),
-                     pageId: pageId
-                 }; widgets.push(newwidget);
-             }
 
 
 
@@ -106,7 +135,7 @@
                     return widgets[w];
                 }
             }return null;
-            
+
         }
 
 

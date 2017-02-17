@@ -23,8 +23,8 @@
         function register(user){
             var registerUser = UserService.findUserByCredentials(user.username, user.password);
             if(registerUser === null) {
-                newUser = UserService.createUser(user);
-                $location.url('/user/'+user._id);}
+                var newUser = UserService.createUser(user);
+                $location.url('/user/'+ newUser._id);}
             else {vm.error = "User Already Exists";}
         }
     }

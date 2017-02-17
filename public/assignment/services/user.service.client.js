@@ -29,8 +29,10 @@
             { var newuser = {
                 username: user.username,
                 password : user.password,
-                _id : (new Date()).getTime().toString()
-
+                email: user.email,
+                _id : (new Date()).getTime().toString(),
+                firstName: user.firstname,
+                lastName: user.lastname
             }; users.push(newuser);
                 return angular.copy(newuser);
             }
