@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row container-fluid">
-        <div class="col-sm-4 hidden-xs">
+
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
                class="glyphicon glyphicon-chevron-left pull-left navbar-brand"></a>
             <div class="navbar-header">
@@ -8,31 +8,15 @@
                     Widgets
                 </a>
             </div>
-        </div>
-        <div class="col-sm-8">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
-               class="glyphicon glyphicon-chevron-left pull-left navbar-brand visible-xs"></a>
             <a ng-click="model.updateWidget()" class="glyphicon glyphicon-ok pull-right navbar-brand"></a>
-            <div class="navbar-header">
-                <a class="navbar-brand no-left-margin">
-                    Widget Edit
-                </a>
-            </div>
-        </div>
+        
+
     </div>
 </nav>
 
 
 <div class="row container-fluid">
-    <div class="col-sm-4 hidden-xs">
 
-        <a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('HEADER')">Header</a>
-        <a class = "btn btn-block btn-danger" role="button" ng-click = "model.createWid('IMAGE')">Image</a>
-        <a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('YOUTUBE')">Youtube</a>
-        <!--<a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('HTML')">HTML</a>-->
-    </div>
-
-    <div class="col-sm-8">
         <form>
             <div class="form-group">
                 <label for="widget-name">Name</label>
@@ -66,7 +50,7 @@
                 </a>
             </div>
         </form>
-    </div>
+
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
