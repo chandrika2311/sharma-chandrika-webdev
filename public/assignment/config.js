@@ -51,17 +51,17 @@
                 controllerAs: "model"
             })
             .when("/user/:uid/website/:wid/page", {
-                templateUrl: "views/page/template/page-list.view.client.html",
+                templateUrl: "views/page/Template/page-list.view.client.html",
                 controller: "PageListController",
                 controllerAs: "model"
             })
             .when("/user/:uid/website/:wid/page/new", {
-                templateUrl: "views/page/template/page-new.view.client.html",
+                templateUrl: "views/page/Template/page-new.view.client.html",
                 controller:"PageNewController",
                 controllerAs:"model"
             })
             .when("/user/:uid/website/:wid/page/:pid", {
-                templateUrl: "views/page/template/page-edit.view.client.html",
+                templateUrl: "views/page/Template/page-edit.view.client.html",
                 controller: "EditPageController",
                 controllerAs: "model"
             })
