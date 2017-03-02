@@ -5,16 +5,26 @@
 
     function WidgetListController($sce, $routeParams, WidgetService) {
         var vm = this;
+
         vm.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
         vm.getTrustedHtml = getTrustedHtml;
         vm.getWidgetTemplateUrl = getWidgetTemplateUrl;
-        vm.userId = $routeParams.uid;
-        vm.websiteId = $routeParams.wid;
-        vm.pageId = $routeParams.pid;
-        vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+
+        function init() {
+            vm.userId = $routeParams.uid;
+            vm.websiteId = $routeParams.wid;
+            vm.pageId = $routeParams.pid;
+            WidgetService
+                .findAllWidgetsForPage(vm.pageId)
+                .success(function (widgets) {
+                    vm.widgets = widgets;
+                    console.log(vm.widgets);
+                });
+        }
+        init();
 
         function getWidgetTemplateUrl(widgetType) {
-            var url = "views/widget/templates/widget-"+widgetType+".view.client.html";
+            var url = "views/widget/Template/widget-"+widgetType+".view.client.html";
             return url;
         }
 

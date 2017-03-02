@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="WebAppMaker">
+<html lang="en" ng-app="DigitalMagazineMaker">
 
 <head>
     <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <!--JQuery:-->
+
+    <link href="Magazine.css" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
     <!-- loading the angular core library from CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- loading app.js file-->
-    <script src="app.js"></script>
-    <script src="config.js"></script>
+    <script src="app_p.js"></script>
+    <script src="config_p.js"></script>
     <title>Project Home Page</title>
 </head>
 <body>
-<h1>Project page</h1>
+<div ng-view></div>
 </body>
 </html>

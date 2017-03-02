@@ -16,25 +16,14 @@
 </nav>
 
 <div class="row container-fluid" >
-
-
-            <a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('HEADING')">Header</a>
-
-
-
-            <a class = "btn btn-block btn-danger" role="button" ng-click = "model.createWid('IMAGE')">
-                Image</a>
-
-
-
-            <a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('YOUTUBE')">
-                Youtube</a>
-
-
+            <a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('HEADER')">Header</a>
+            <a class = "btn btn-block btn-danger" role="button" ng-click = "model.createWid('IMAGE')">Image</a>
+            <a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('YOUTUBE')">Youtube</a>
+            <!--<a class = "btn btn-block btn-danger" role="button" ng-click="model.createWid('HTML')">HTML</a>-->
 </div>
 <footer class="footer">
     <div class="container-fluid">
-        <a href="../views/user/profile.view.client.html">
+        <a href="#/user/{{model.userId}}">
             <span class = "glyphicon glyphicon-user pull-right"></span>
         </a>
     </div>

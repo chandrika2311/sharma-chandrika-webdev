@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-right">
-            <a ng-click="model.update(model.user)">
+            <!--<a ng-click="model.update(model.user)">-->
                 <span class="glyphicon glyphicon-ok"></span>
             </a>
         </div>
@@ -25,14 +25,14 @@
     </div>
 <div class = container>
     <label for="first">First Name</label>
-    <input ng-model="model.user.firstName"
+    <input ng-model="model.user.firstname"
            id="first"
            class="form-control"
            type="text"
            placeholder="First Name"/>
 
     <label for="last">Last Name</label>
-    <input ng-model="model.user.lastName"
+    <input ng-model="model.user.lastname"
            id="last"
            class="form-control"
            type="text"
@@ -60,9 +60,17 @@
     <a href="#/user/{{model.user._id}}/website" class="btn btn-success btn-block">
         Websites
     </a>
+    <a  ng-click="model.update(model.user)"
+        class="btn btn-primary btn-block">
+        Update
+    </a>
 
     <a class="btn btn-danger btn-block" href="#/login">
         Logout
+    </a>
+    <a  ng-click="model.unregisterUser(model.user)"
+        class="btn btn-warning btn-block">
+        Un-register User
     </a>
 </div>
 </div>

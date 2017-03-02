@@ -1,9 +1,4 @@
-/**
- * Created by chandrika2311 on 2/14/17.
- */
-/**
- * Created by chandrika2311 on 2/14/17.
- */
+
 (function(){
     angular
         .module("WebAppMaker")
@@ -11,9 +6,18 @@
 
     function PageListController($routeParams, PageServices) {
         var vm = this;
-        vm.userId = $routeParams.uid;
-        vm.websiteId = $routeParams.wid;
-        vm.pages = PageServices.findPagesByWebsiteId(vm.websiteId);
+
+        function init() {
+            vm.userId = $routeParams.uid;
+            vm.websiteId = $routeParams.wid;
+
+            PageServices
+                .findAllPagesForWebsite(vm.websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                });
+
+        }init();
 
 
     }

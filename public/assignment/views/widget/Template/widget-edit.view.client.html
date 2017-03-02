@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
@@ -17,8 +17,27 @@
 </nav>
 
 
-<div class="container-fluid"
-     ng-include="model.getEditorTemplateUrl(model.widget.widgetType)">
+<div class="container-fluid">
+<div ng-switch="model.widget.widgetType">
+
+    <div ng-switch-when="HEADER">
+        <div ng-include="model.getEditorTemplateUrl(model.widget.widgetType)"></div>
+    </div>
+
+    <div ng-switch-when="IMAGE">
+        <div ng-include="model.getEditorTemplateUrl(model.widget.widgetType)"></div>
+    </div>
+
+    <!--<div ng-switch-when="HTML">-->
+        <!--<div ng-include="model.getEditorTemplateUrl(model.widget.widgetType)"></div>-->
+    <!--</div>-->
+
+    <div ng-switch-when="YOUTUBE">
+        <div ng-include="model.getEditorTemplateUrl(model.widget.widgetType)"></div>
+    </div>
+
+</div>
+
 
 </div>
 

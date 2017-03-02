@@ -8,41 +8,54 @@
 
     function NewWidgetController(WidgetService, $routeParams, $location) {
         var vm = this;
-        vm.widgetId = $routeParams.wgid;
-        vm.pageId = $routeParams.pid;
-        vm.userId = $routeParams.uid;
-        vm.websiteId = $routeParams.wid;
+
         vm.createWid = createWid;
 
 
         function init() {
-            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+
+            vm.pageId = $routeParams.pid;
+            vm.userId = $routeParams.uid;
+            vm.websiteId = $routeParams.wid;
+
+
         }init();
 
 
         function createWid(widgetType) {
+            console.log(widgetType);
             newWidget = {};
             newWidget.pageId = vm.pageId;
-            newWidget.widgetType = widgetType;
+            newWidget.widgetType = widgetType.toString();
             newWidget._id = (new Date()).getTime().toString();
             switch (widgetType) {
-                case "heading":
+                case "HEADER":
+                    newWidget.name = "Cat and Dog";
                     newWidget.text = "CAT & DOG <3 <3";
                     newWidget.size = 3;
                     break;
-                case "image":
+                case "IMAGE":
+                    newWidget.name = "Cat and Dog";
+                    newWidget.text = "hello";
                     newWidget.url = "https://image.shutterstock.com/z/stock-photo-blue-eyed-cat-259729697.jpg";
                     newWidget.width = "100%";
                     break;
-                case "youtube":
+                case "YOUTUBE":
+                    newWidget.name = "hello_youtube";
+                    newWidget.text = "hello_youtube";
                     newWidget.url = "https://www.youtube.com/watch?v=wj3BILPQoCo";
                     newWidget.width = "100%";
                     break;
-                case "html":
-                    newWidget.text = "Hello Cat Hello Dog";
-                    break;
+                // case "HTML":
+                //     newWidget.text = "<p>Hello Cat Hello Dog<p>";
+                //     break;
             }
-            WidgetService.createWidgets(vm.pageId, newWidget);
-            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + newWidget._id);
+            console.log(newWidget);
+            WidgetService
+                .createWidgets(vm.pageId, newWidget)
+                .success(function (widget) {
+                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+newWidget._id);
+                });
+
         }
     }})();

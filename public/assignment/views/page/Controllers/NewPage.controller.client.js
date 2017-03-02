@@ -8,21 +8,26 @@
 
     function PageNewController($routeParams, $location, PageServices) {
         var vm = this;
-        vm.userId = $routeParams.uid;
-        vm.websiteId = $routeParams.wid;
+
         vm.createPage = createPage;
 
         function init() {
-            vm.pages = PageServices.findPagesByWebsiteId(vm.websiteId);
+            vm.userId = $routeParams.uid;
+            vm.websiteId = $routeParams.wid;
+            vm.pages = PageServices.findAllPagesForWebsite(vm.websiteId);
         }
         init();
 
         function createPage (page){
             if (page!=null)
             {
-                PageServices.createPage(vm.websiteId, page);
+                PageServices.createPage(vm.websiteId, page)
+                    .success(function () {
+                        $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
+
+                    });
             }
-            $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
+
         }
     }
     }

@@ -11,21 +11,36 @@
         vm.userId = $routeParams.uid;
         vm.websiteId = $routeParams.wid;
         vm.deleteWebsite = deleteWebsite;
+        vm.updateWebsite = updateWebsite;
 
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
-            vm.website = WebsiteService.findWebsiteById(vm.websiteId);
+            WebsiteService.
+            findWebsitesByUser(vm.userId)
+                .success(function (websites) {
+                    vm.websites = websites;
+
+                });
+            WebsiteService
+                .findWebsiteById(vm.websiteId)
+                .success(function (website) {
+                    vm.website = website;
+                })
         }
+
         init();
 
         function deleteWebsite() {
             WebsiteService.deleteWebsite(vm.websiteId);
-            $location.url("/user/"+vm.userId+"/website");
-        };
+            $location.url("/user/" + vm.userId + "/website");
+        }
+
         function updateWebsite() {
-            WebsiteService.updateWebsite(vm.websiteId);
-            $location.url("/user/"+vm.userId+"/website");
-        };
+            WebsiteService
+                .updateWebsite(vm.websiteId, vm.website)
+                .success(function (website) {
+                    $location.url("/user/"+vm.userId+"/website");
+                });
+        }
     }
 })();

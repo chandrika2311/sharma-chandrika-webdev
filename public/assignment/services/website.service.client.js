@@ -4,7 +4,7 @@
         .module("WebAppMaker")
         .factory("WebsiteService", WebsiteService);
 
-    function WebsiteService() {
+    function WebsiteService($http) {
         var websites =
             [
                 {_id: "123", name: "Facebook", developerId: "456", description: "Lorem"},
@@ -25,57 +25,28 @@
         return api;
 
         function createWebsite(userId, website) {
-            /** adds the website parameter instance to the local websites array.
-             *  The new website's developerId is set to the userId parameter**/
-            website.developerId = userId;
-            website._id = (new Date()).getTime().toString();
+            return $http.post("/api/user/"+userId+"/website",website);
 
-
-            websites.push(website);
         }
 
         function findWebsitesByUser(userId) {
-            /**retrieves the websites in local websites array whose developerId matches the parameter userId**/
-            var sites = [];
-            for(var w in websites) {
-                if(websites[w].developerId === userId) {
-                    sites.push(websites[w]);
-                }
-            }
-            return sites;
+            return $http.get("/api/user/"+userId+"/website");
         }
 
         function findWebsiteById(wid) {
             /**retrieves the website in local websites array whose _id matches the websiteId parameter**/
+            return $http.get("/api/website/"+wid);
 
-            for(var w in websites) {
-                if(websites[w]._id === wid) {
-                    return websites[w];
-                }
-            }
-            return null;
         }
 
         function updateWebsite(wid, website) {
             /**updates the website in local websites array whose _id matches the websiteId parameter**/
-            for(var w in websites) {
-                if( websites[w].developerId === wid){
-                    websites[w]._id = website._id;
-                    websites[w].name = website.name;
-                    websites[w].developerId = website.developerId;
-                    websites[w].description = website.description;
-                    return websites[w];
-                }
-            }return null;
+            return $http.put("/api/website/"+wid, website);
         }
 
         function deleteWebsite(wid) {
             /**removes the website from local websites array whose _id matches the websiteId parameter**/
-            for(var w in websites) {
-                if(websites[w]._id === wid) {
-                    websites.splice(w, 1);
-                }
-            }
+            return $http.delete("/api/website/"+wid);
         }
     }
 
