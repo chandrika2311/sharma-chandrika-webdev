@@ -18,7 +18,7 @@ WidgetModel.setModel = setModel;
 WidgetModel.uploadImage = uploadImage;
 WidgetModel.deleteWidgetOfPage = deleteWidgetOfPage;
 WidgetModel.deleteUploadedImage = deleteUploadedImage;
-WidgetModel.sortWidget = sortWidget;
+
 
 
 function setModel(_model) {
@@ -158,37 +158,7 @@ function deleteWidgetOfPage(widgetId) {
             return err;
         });
 }
-function sortWidget(index1, index2, pid) {
-    PageModel
-        .findPageById(pid)
-        .then(function (page) {
 
-
-            for (var i = index1; i < index2; i++) {
-                var temp = page.widgets[i];
-                page.widgets[i] = page.widgets[i + 1];
-                page.widgets[i + 1] = temp;
-            }
-
-            for (var i = index1; i > index2; i--) {
-                var temp = page.widgets[i];
-                page.widgets[i] = page.widgets[i - 1];
-                page.widgets[i - 1] = temp;
-            }
-
-            PageModel
-                .update({_id: pid}, {$set: {widgets: page.widgets}}, function(err, updatedPage) {
-                    // console.log("UPDATED");
-                    PageModel
-                        .findPageById(pageId)
-                        .then(function (page) {
-                           return page;
-                        });
-                });
-
-
-        });
-}
 
 
 module.exports = WidgetModel;

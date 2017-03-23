@@ -6,7 +6,7 @@ module.exports = function (app, WidgetModel) {
     app.post('/api/page/:pageId/widget', createWidget);
     app.get('/api/widget/:widgetId', findWidgetById);
     app.put('/api/widget/:widgetId', updateWidget);
-    app.put("/page/:pid/widget", sortWidget);
+
     app.delete('/api/widget/:widgetId',deleteWidget);
 
     var multer = require('multer');
@@ -161,20 +161,7 @@ module.exports = function (app, WidgetModel) {
                 res.sendStatus(404);
             });
     }
-    function sortWidget(req, res) {
-        var pid = req.params.pid;
-        var index1 = parseInt(req.query.initial);
-        var index2 = parseInt(req.query.final);
 
-        WidgetModel
-            .sortWidget(index1, index2, pid)
-            .then(function() {
-                console.log('success');
-                res.sendStatus(200);
-            }, function(err) {
-                res.sendStatus(500).send(err);
-            });
-    }
 
 
 };
