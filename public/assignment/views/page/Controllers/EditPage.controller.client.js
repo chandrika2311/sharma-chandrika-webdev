@@ -33,7 +33,7 @@
             PageServices
                 .deletePage(vm.pageId)
                 .success(function () {
-                    $location.url("/user/"+vm.userId+"/website"+vm.websiteId+"/page");
+                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page");
                 });
 
         };

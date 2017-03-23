@@ -12,6 +12,7 @@
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
         vm.updateWidget = updateWidget;
         vm.deleteWidget = deleteWidget;
+        vm.searchImage = searchImage;
 
 
         function init() {
@@ -22,7 +23,7 @@
 
             WidgetService.findWidgetsById(vm.widgetId)
                 .success(function (widget) {
-                    vm.widget=widget;
+                    vm.widget = widget;
                 });
             WidgetService.findAllWidgetsForPage(vm.pageId)
                 .success(function (widget) {
@@ -48,6 +49,9 @@
                 .success(function () {
                     $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget");
                 });
+        }
+        function searchImage() {
+            $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+vm.widgetId+"/flickr");
         }
     }
 })();

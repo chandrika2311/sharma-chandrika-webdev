@@ -7,5 +7,5 @@
 (function(){
     //add directives called webapp to a module called webappmaker
     angular
-        .module("WebAppMaker", ["ngRoute"])
+        .module("WebAppMaker", ["ngRoute","textAngular"])
 })();

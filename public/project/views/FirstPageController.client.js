@@ -12,6 +12,8 @@
     vm.init = init;
         function initial() {
             vm.hello = "hello my friend";
+
+
         }
         initial();
 

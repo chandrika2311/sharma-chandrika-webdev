@@ -203,3 +203,17 @@ body {
     padding-bottom: 60px;
 
 }
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    width:90%;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: auto;
+}

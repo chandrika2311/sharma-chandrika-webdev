@@ -13,21 +13,17 @@
 
 
         function init() {
-
-            vm.pageId = $routeParams.pid;
-            vm.userId = $routeParams.uid;
-            vm.websiteId = $routeParams.wid;
+            vm.userId = $routeParams["uid"];
+            vm.websiteId = $routeParams["wid"];
+            vm.pageId = $routeParams["pid"];
 
 
         }init();
 
-
         function createWid(widgetType) {
-            console.log(widgetType);
             newWidget = {};
             newWidget.pageId = vm.pageId;
             newWidget.widgetType = widgetType.toString();
-            newWidget._id = (new Date()).getTime().toString();
             switch (widgetType) {
                 case "HEADER":
                     newWidget.name = "Cat and Dog";
@@ -44,17 +40,17 @@
                     newWidget.name = "hello_youtube";
                     newWidget.text = "hello_youtube";
                     newWidget.url = "https://www.youtube.com/watch?v=wj3BILPQoCo";
-                    newWidget.width = "100%";
+
                     break;
-                // case "HTML":
-                //     newWidget.text = "<p>Hello Cat Hello Dog<p>";
-                //     break;
+                 case "HTML":
+                     newWidget.text = "Hello Cat Hello Dog";
+                     break;
             }
             console.log(newWidget);
             WidgetService
                 .createWidgets(vm.pageId, newWidget)
                 .success(function (widget) {
-                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+newWidget._id);
+                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+widget._id);
                 });
 
         }
