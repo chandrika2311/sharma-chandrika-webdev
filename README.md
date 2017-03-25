@@ -1,8 +1,10 @@
 # web-dev-template
 
 1. git clone https://github.com/chandrika2311/sharma-chandrika-webdev.git
-1. cd web-dev-template
-1. npm install
-1. mongod
-1. node server.js
-1. browse to localhost:3000
+2. cd web-dev-template
+3. npm install
+4. mongod
+5. node server.js
+6. browse to localhost:3000
+7. Heroku App: https://sharma-chandrika-webdevelop.herokuapp.com/
+
