@@ -56,10 +56,10 @@ module.exports = function (app, UserModel) {
 
     var facebookConfig = {
         clientID     : process.env.FACEBOOK_CLIENT_ID,
-        clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
+        clientSecret : process.env.FACEBOOK_CLIENT_ID,
         callbackURL  : process.env.FACEBOOK_CALLBACK_URL,
         profileFields: ['id','displayName', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified']
-    }
+    };
     passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
 
     passport.use(new GoogleStrategy(googleConfig, googleStrategy));
