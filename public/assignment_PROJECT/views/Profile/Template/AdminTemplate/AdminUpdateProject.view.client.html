@@ -34,7 +34,7 @@
                 <h2>Update Projects</h2>
                 <div class="form-group">
                     <label for="ProjectTitle">Title</label>
-                    <input ng-model = "project.Title"type="text" class="form-control"
+                    <input ng-model = "model.project.Title"type="text" class="form-control"
                            id="ProjectTitle"
                            aria-describedby="Project Title"
                            placeholder="Enter Project Title">
@@ -42,32 +42,32 @@
                 </div>
                 <div class="form-group">
                     <label for="ProjectDescription">Project Description</label>
-                    <input ng-model = "project.Description"
+                    <input ng-model = "model.project.Description"
                            type="text" class="form-control" id="ProjectDescription" placeholder="ProjectDescription">
                     <small id="Description" class="form-text text-muted">Brief description of the project</small>
                 </div>
                 <div class="form-group">
                     <label for="ConceptsInvolved">Key Concepts Involved</label>
-                    <textarea  ng-model = "project.ConceptsInvolved"class="form-control" id="ConceptsInvolved" rows="5"></textarea>
+                    <textarea  ng-model = "model.project.ConceptsInvolved"class="form-control" id="ConceptsInvolved" rows="5"></textarea>
 
                 </div>
 
                 <div class="form-group">
                     <label for="Skillset">Required Skillset</label>
-                    <textarea ng-model = "project.Skillset" class="form-control" id="Skillset" rows="5"></textarea>
+                    <textarea ng-model = "model.project.Skillset" class="form-control" id="Skillset" rows="5"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="BasicRequirements">Basic Student Requirements</label>
-                    <textarea ng-model = "project.BasicRequirements" class="form-control" id="BasicRequirements" rows="5"></textarea>
+                    <textarea ng-model = "model.project.BasicRequirements" class="form-control" id="BasicRequirements" rows="5"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="CourseRequirements">Course Requirements</label>
-                    <textarea ng-model = "project.CourseRequirements" class="form-control" id="CourseRequirements" rows="4"></textarea>
+                    <textarea ng-model = "model.project.CourseRequirements" class="form-control" id="CourseRequirements" rows="4"></textarea>
                 </div>
 
 
-                <button ng-click = "model.updateProject(project)"type="submit" class="btn btn-block btn-warning">Update Project</button>
-                <button ng-click = "model.deleteProject(project)"type="submit" class="btn btn-block btn-warning">Delete Project</button>
+                <button ng-click = "model.updateProject(model.project)"type="submit" class="btn btn-block btn-warning">Update Project</button>
+                <button ng-click = "model.deleteProject(model.project)"type="submit" class="btn btn-block btn-warning">Delete Project</button>
             </form>
         </div>
 

@@ -14,15 +14,15 @@
      page interacts with the data and send s it back       **/
     vm.login = login;
         function initial() {
-            if($rootScope.currentUser != null){
-                if($rootScope.currentUser.role != "mentor"){
+            if ($rootScope.currentUser != null) {
+                if($rootScope.currentUser.role =="admin"){
+                    $location.url('/admin');
+                }if($rootScope.currentUser.role =="admin"){
+                    $location.url('/mentor');
+                }else{
                     $location.url('/');
                 }
 
-            }else{
-                if ($rootScope.currentUser != null) {
-                    $location.url('/mentor');
-                }
                 vm.error = "";
                 vm.hello = "hello my friend";
             }

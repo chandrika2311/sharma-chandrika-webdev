@@ -32,14 +32,16 @@
 
         function deleteCourse(course) {
             users = course._user;
-            for (a = 0; a < users.length ; a++){
-                UserService.findUserById(users[a])
+            for(a = 0; a < users.length ; a++){
+                return UserService.findUserById(users[a])
                     .success(function (user) {
                         var courselist = user.courses;
                         var index = courselist.indexOf(course._id);
                         if (index > -1){
                             courselist.splice(index,1);
                         }
+                        user.courses = courselist;
+                        user.save();
                     })
             }
 

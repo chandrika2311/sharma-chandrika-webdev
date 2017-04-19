@@ -44,8 +44,10 @@
 
         }
 
-        function deleteProject(userId) {
-            return $http.delete('/api/project/'+userId);
+        function deleteProject(project) {
+            var project_id = project.id;
+            console.log("project id at service client",project_id);
+            return $http.delete('/api/project/'+project_id,project);
         }
         function addStudentApplication(studentId, projectId) {
             console.log("client add project");

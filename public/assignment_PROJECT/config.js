@@ -221,6 +221,12 @@
                 controllerAs:"model",
                 resolve: { loggedin: checkLoggedin }
             })
+            .when("/admin/project/:pid", {
+                templateUrl: "views/Profile/Template/AdminTemplate/AdminUpdateProject.view.client.html",
+                controller: "AdminManageProject",
+                controllerAs:"model",
+                resolve: { loggedin: checkLoggedin }
+            })
             .when("/admin/courses", {
                 templateUrl: "views/Profile/Template/AdminTemplate/AdminManageCourses.view.client.html",
                 controller: "AdminManageController",

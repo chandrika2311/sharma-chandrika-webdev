@@ -33,9 +33,12 @@
             <ul class="list-group">
 
                 <li class="list-group-item" ng-repeat="p in model.projects">
-                    <strong><h3>{{p.Title}}</h3></strong>
-                    <strong><p>Description</p></strong> <p>{{p.Description}}</p>
-                    <strong><p>Concepts Involved</p></strong> <p>{{p.ConceptsInvolved}}</p>
+                    <div class="container-fluid">
+                        <a href="#/admin/project/{{p._id}}"><h3>{{p.Title}}</h3></a>
+                        <strong><p>Description</p></strong> <p>{{p.Description}}</p>
+                        <strong><p>Concepts Involved</p></strong> <p>{{p.ConceptsInvolved}}</p>
+                    </div>
+
 
                 </li>
             </ul>

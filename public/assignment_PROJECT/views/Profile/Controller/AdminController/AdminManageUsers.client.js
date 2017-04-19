@@ -18,6 +18,7 @@
         vm.deleteUser = deleteUser;
         vm.updateUser = updateUser;
 
+
         vm.logout = logout;
 
 
@@ -41,6 +42,7 @@
 
         }
         init();
+
         function updateUser(user) {
             UserService.updateUser(vm.userId, vm.user)
                 .success(function (response) {
@@ -53,7 +55,46 @@
 
 
         }
-        function deleteUser(userId) {
+        function deleteStudent(user) {
+            var projects = user.projects;
+            var courses = user.courses;
+            for (a = 0; a < courses.length ; a++){
+                UdacityService.deleteCourse(courses[a]);
+            }
+            for (b = 0; b < projects.length ; b++){
+                ProjectService.findProjectById(projects[b])
+                    .success(function (project) {
+                        var students_working = project.StudentWorking;
+                        var index = students_working.indexOf(user._id);
+                        if (index > -1){
+                            students_working.splice(index,1);
+                            project.StudentWorking = students_working;
+                            project.save();
+
+
+                        }});
+            }
+
+
+        }
+        function deleteMentor(user) {
+            var projects = user.projects;
+
+                for (b = 0; b < projects.length ; b++){
+                    ProjectService.deleteProject(projects[b]);
+                            }
+                }
+
+
+        function deleteUser(user) {
+            if (user.role =="student") {
+                deleteStudent(user);
+                }
+
+            if (user.role =="mentor") {
+                deleteMentor(user);
+            }
+
             UserService.deleteUser(vm.userId)
                 .success(function (response) {
                     vm.message = "user successfully deleted";

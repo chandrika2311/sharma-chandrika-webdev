@@ -10,6 +10,7 @@
 
         var api = {
             "logout": logout,
+            "spliceProjectFromUser": spliceProjectFromUser,
             "login":login,
             "register": register,
             "createUser": createUser,
@@ -31,6 +32,10 @@
 
         function logout(user) {
             return $http.post("/api/logout");
+        }
+        function spliceProjectFromUser(userId,project) {
+            return $http.post("/api/splice/project/"+userId,project);
+
         }
 
         function register(user) {

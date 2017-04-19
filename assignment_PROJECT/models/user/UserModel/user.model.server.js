@@ -12,6 +12,7 @@ var UserModel = mongoose.model('UserModel', UserSchema);
 
 
 UserModel.createUser = createUser;
+UserModel.spliceProjectFromUser = spliceProjectFromUser;
 UserModel.findUserByFacebookId = findUserByFacebookId;
 UserModel.deleteUser = deleteUser;
 UserModel.findAllMentors = findAllMentors;
@@ -93,6 +94,31 @@ function findAllUsers() {
 }
 
 function deleteUser(userId) {
+return UserModel.remove({_id: userId});
+}
+
+function spliceProjectFromUser(userId,projectId) {
+    return UserModel.findUserById(userId)
+        .then(function (user) {
+            var projects = user.projects;
+            var applications = user.ProjectApplications;
+
+            var index_s = projects.indexOf(projectId);
+            var index_a = applications.indexOf(projectId);
+
+            console.log("user after the changes", user);
+            if (index_s > -1){
+                projects.splice(index_s,1);
+            }
+            if (index_a > -1){
+                projects.splice(index_a,1);
+            }
+            user.projects = projects;
+            user.ProjectApplications = applications;
+
+            console.log("user after the changes", user);
+            return user.save();
+        })
 
 }
 

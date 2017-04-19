@@ -14,6 +14,7 @@ module.exports = function (app, UserModel) {
     app.post('/api/login', passport.authenticate('local'), login);
     app.post('/api/logout', logout);
     app.post('/api/register', register);
+    app.post('/api/splice/project/:userId', spliceProjectFromUser);
     app.get ('/api/loggedin', loggedin);
     app.get ('/api/allUsers', getAllUsers);
     app.get("/api/user", findUser);
@@ -364,6 +365,16 @@ module.exports = function (app, UserModel) {
                     done(err, null);
                 }
             );
+    }
+    function spliceProjectFromUser(req,res) {
+        var userId = req.params.userId;
+        var project = req.body;
+        UserModel.spliceProjectFromUser(userId, project._id)
+            .then(function (user) {
+                console.log("user got in serverjs",user);
+                res.send(user);
+            })
+
     }
 
 

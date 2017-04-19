@@ -8,7 +8,7 @@ module.exports = function (app, ProjectModel) {
     app.post('/api/project/reject', removeProjectfromApplication);
     app.post('/api/project/application/:projectId',addStudentApplication);
     app.put('/api/project/:projectId', updateProject);
-    app.delete('/api/page/:projectId', deleteProject);
+    app.delete('/api/project/:projectId', deleteProject);
     app.post('/api/mentor/:userId/project', createProject);
 
     function createProject(req,res) {
@@ -61,8 +61,18 @@ module.exports = function (app, ProjectModel) {
             });
         
     }
-    function deleteProject() {
-        
+    function deleteProject(req,res) {
+        var projectId = req.params.projectId;
+        var project = req.body;
+
+        ProjectModel.deleteProject(projectId)
+            .then(function (response) {
+                res.send(response);
+
+            },function (err) {
+                console.log(err);
+
+            })
     }
     function addStudentApplication(req,res) {
         console.log('server addStudentApplication');

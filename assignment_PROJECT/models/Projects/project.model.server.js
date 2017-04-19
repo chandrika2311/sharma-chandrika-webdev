@@ -61,6 +61,9 @@ function createProject(userId, project) {
 }
 function deleteProject(projectId) {
 
+    return ProjectModel.remove({id:projectId});
+
+
 }
 function findProjectById(projectId) {
     return ProjectModel.findOne({_id: projectId});
