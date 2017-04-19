@@ -17,8 +17,14 @@
         vm.login = login;
         vm.logout = logout;
         function initial() {
+
             if ($rootScope.currentUser != null) {
-                $location.url('/student');
+                if($rootScope.currentUser.role =="admin"){
+                    $location.url('/admin');
+                }else{
+                    $location.url('/student');
+                }
+
             }
             vm.error = "";
         }

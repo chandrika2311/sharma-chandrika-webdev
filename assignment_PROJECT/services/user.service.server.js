@@ -29,7 +29,7 @@ module.exports = function (app, UserModel) {
 
 
     app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
-    app.get('/auth/facebook',passport.authenticate('facebook',{ scope : 'email'}));
+    //app.get('/auth/facebook',passport.authenticate('facebook',{ scope : 'email'}));
 
 
     app.get('/auth/google/callback',
@@ -40,13 +40,13 @@ module.exports = function (app, UserModel) {
             res.redirect(url);
         });
 
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-        failureRedirect: '#/student/login'
-    }), function(req, res){
-        var url = '/assignment_PROJECT/index.html#/student';
-        res.redirect(url);
-    });
+    // app.get('/auth/facebook/callback',
+    //     passport.authenticate('facebook', {
+    //     failureRedirect: '#/student/login'
+    // }), function(req, res){
+    //     var url = '/assignment_PROJECT/index.html#/student';
+    //     res.redirect(url);
+    // });
 
     var googleConfig = {
         clientID     : process.env.GOOGLE_CLIENT_ID,
@@ -60,9 +60,9 @@ module.exports = function (app, UserModel) {
         callbackURL  : process.env.FACEBOOK_CALLBACK_URL,
         profileFields: ['id','displayName', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified']
     };
-    passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
+    //passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
 
-    passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+    //passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
 
     passport.serializeUser(serializeUser);

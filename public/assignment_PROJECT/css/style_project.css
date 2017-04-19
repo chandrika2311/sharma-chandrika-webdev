@@ -106,7 +106,9 @@ ol, ul {
     text-decoration: none;
 
 }
-
+a:link, a:visited {
+    color: black !important;
+}
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300');
 
 #bodyProfile {

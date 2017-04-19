@@ -11,7 +11,7 @@ CourseModel.findAllCoursesForStudent = findAllCoursesForStudent;
 CourseModel.findAllCourses = findAllCourses;
 CourseModel.setModel = setModel;
 // CourseModel.updateCourse = updateWebsite;
-CourseModel.deleteCourse = deleteCourse;
+
 CourseModel.findCourseById = findCourseById;
 CourseModel.deleteCourse = deleteCourse;
 
@@ -104,49 +104,10 @@ function findAllCourses() {
 }
 function deleteCourse(courseId){
 
-    // Delete a website, its reference in parent and its children
-        CourseModel.findOne({_id: courseId})
-        .then(function (course) {
-            console.log("course found");
-            var students_in_course = course._user;
-            findUserandDeleteCourse(courseId,students_in_course);
-            return CourseModel.remove(courseId)
-                .then(function (response) {
-                    console.log('inside page model,recursiveDelete ');
-                    console.log(response);
-                    if(response.result.n == 1 && response.result.ok == 1){
-                        return response;
-                    }
-                }, function (err) {
-                    console.log(err);
-                    return err;
-                })
+    return CourseModel.remove({_id : courseId});
 
-            
-
-        })
 }
-function findUserandDeleteCourse(courseId,students) {
 
-    for(count = 0;count < students.length;count++){
-        console.log(students);
-        model.UserModel.findUserById(students[count])
-            .then(function (student) {
-                console.log("student found",student);
-                var studentCourses = student.courses;
-                var index = studentCourses.indexOf(courseId);
-                console.log("index",index);
-                if (index > -1){
-                    studentCourses.splice(index,1);
-                }
-                console.log("student before save",student);
-                student.courses = studentCourses;//reassign course
-                student.save();
-                console.log("student after save",student);
-
-
-
-})}}
 
 function recursiveDelete(pagesOfWebsite, websiteId) {
     if(pagesOfWebsite.length == 0){
