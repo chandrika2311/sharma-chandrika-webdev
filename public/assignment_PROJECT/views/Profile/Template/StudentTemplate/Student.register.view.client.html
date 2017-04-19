@@ -28,14 +28,19 @@
         <div class="alert alert-danger" ng-show="model.error">
             {{model.error}}
         </div>
+
         <div class="form-group">
             <label for="sel1" >Industry:</label>
-            <select class="form-control" id="sel1" ng-model="mentor.industry">
+            <select class="form-control" id="sel1" ng-model="mentor.industry"name = "Industry">
                 <option>Computer Science</option>
                 <option>Engineering</option>
                 <option>Management Studies</option>
                 <option>Legal</option>
             </select>
+            <div ng-show="form.$submitted || form.industry.$touched">
+                <span ng-show="form.Industry.$error.required">Tell us your email.</span>
+                <span ng-show="form.Industry.$error.email">This is not a valid email.</span>
+            </div>
             <br>
             <label for="sel2" >University Name</label>
             <select class="form-control" id="sel2" ng-model="mentor.university">
@@ -80,7 +85,7 @@
                    placeholder="Password">
             <br>
             <label for="repassword"> Repeat Password </label>
-            <input ng-model="user.repassword"
+            <input ng-model="user.repassword1"
                    id="repassword" type ="text" class="form-control" name="re-password"
                    placeholder="Repeat Password">
             <br>

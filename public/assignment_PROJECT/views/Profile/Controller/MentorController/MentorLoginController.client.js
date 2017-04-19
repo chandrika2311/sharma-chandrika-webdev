@@ -13,6 +13,7 @@
     var vm = this; /**   this is the variable which sends data to the page and the
      page interacts with the data and send s it back       **/
     vm.login = login;
+    vm.error = "";
         function initial() {
             if ($rootScope.currentUser != null) {
                 if($rootScope.currentUser.role =="admin"){
@@ -31,34 +32,46 @@
         initial();
 
         function login(user) {
-            UserService
-                .login(user)
-                .success(
-                    function (response) {
+            UserService.
+            findUserByUsername(user.username)
+                .success(function (response) {
+                    if(response != ""){
+                        UserService
+                            .login(user)
+                            .success(
+                                function (response) {
 
-                        var user = response;
-                        if(user !=null){
-                            if(user.role =="mentor"){
-                                $rootScope.currentUser = user;
-                                // $location.url('/mentor/'+user._id);
-                                $location.url('/mentor');
+                                    var user = response;
+                                    if(user !=null){
+                                        if(user.role =="mentor"){
+                                            $rootScope.currentUser = user;
+                                            // $location.url('/mentor/'+user._id);
+                                            $location.url('/mentor');
 
-                            }
-                            if(user.role =="admin"){
-                                $rootScope.currentUser = user;
-                                // $location.url('/mentor/'+user._id);
-                                $location.url('/admin');
+                                        }
+                                        if(user.role =="admin"){
+                                            $rootScope.currentUser = user;
+                                            // $location.url('/mentor/'+user._id);
+                                            $location.url('/admin');
 
-                            }
-                            else{
+                                        }
+                                        else{
+                                            vm.error = "Invalid Credentials";
+                                        }
+                                    }
+                                })
+                            .error(function (error) {
                                 vm.error = "Invalid Credentials";
-                            }
-                        }
-                    })
-                .error(function (error) {
-                    vm.error = "Invalid Credentials";
+
+                            });
+                    }else{
+                        vm.error = "Invalid Credentials";
+                    }
 
                 });
+
+
+
         }
     }
 

@@ -30,7 +30,7 @@
                 <input ng-model="student.username"
                        id="username"
                        class="form-control"
-                       placeholder="john123"/>
+                       placeholder="john123" required/>
 
                 <label for="password">Password</label>
                 <input ng-model="student.password"
@@ -39,16 +39,12 @@
                        value=""
                        class="form-control"
                        type="password"
-                       placeholder="req4321"/>
+                       placeholder="req4321" required/>
                 <br><br>
                 <div id="buttonpadding">
                     <a class="btn btn-primary btn-block" ng-click="model.login(student)">Login</a>
                     <a class="btn btn-block btn-warning" href="#/student/register">Register</a>
-                    <!--<a href="/auth/facebook"-->
-                       <!--class="btn btn-danger btn-block">-->
-                        <!--<span class="fa fa-facebook"></span>-->
-                        <!--Facebook-->
-                    <!--</a>-->
+
 
 
                 </div>

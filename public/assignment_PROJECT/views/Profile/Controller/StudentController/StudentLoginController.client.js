@@ -31,33 +31,48 @@
         initial();
         function login(user) {
 
+            if (user == null) {
+                vm.error = "Please enter your details";
+                return;
+            }
+            UserService.
+            findUserByUsername(user.username)
+                .success(function (response) {
+                    if(response != ""){
 
-            UserService
-                .login(user)
-                .then(
-                    function (response) {
-                        var user = response.data;
-                        if (user.role == "student") {
-                            $rootScope.currentUser = user;
-                            // $location.url('/mentor/'+user._id);
-                            $location.url('/student');
 
-                        }
-                        if (user.role == "admin") {
-                            $rootScope.currentUser = user;
-                            // $location.url('/mentor/'+user._id);
-                            $location.url('/admin');
+                    UserService.login(user)
+                        .then(
+                            function (response) {
+                                var user = response.data;
+                                if (user.role == "student") {
+                                    $rootScope.currentUser = user;
+                                    // $location.url('/mentor/'+user._id);
+                                    $location.url('/student');
 
-                        }
-                        else {
-                            vm.error = "Invalid Credentials";
-                        }
+                                }
+                                if (user.role == "admin") {
+                                    $rootScope.currentUser = user;
+                                    // $location.url('/mentor/'+user._id);
+                                    $location.url('/admin');
 
-                    })
+                                }
+                                else {
+                                    vm.error = "Invalid Credentials";
+                                }
 
+                            },function (err) {
+                                vm.error = "Invalid Credentials";
+
+                            });
+                    }else{
+                        vm.error = "Invalid Credentials";
+                    }
+
+                },function (err) {
+                    vm.error = "Invalid Credentials";
+                });
         }
-
-
         function logout() {
             UserService
                 .logout()
