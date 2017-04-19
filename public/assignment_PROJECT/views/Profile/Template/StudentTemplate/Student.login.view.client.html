@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#/">MentorMine</a>
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="alert alert-danger" ng-show="model.error">
+    {{model.error}}
+</div>
+
+
+<div class="container-fluid" id = "bodyProfile">
+    <br>
+    <div class="row-fluid">
+        <div class="span5 offsetHalf">
+            <div  class="col-sm-12" id = "hazy">
+                <h1>Student Login</h1>
+                <br><br><br>
+                <label for="username">Username</label>
+                <input ng-model="student.username"
+                       id="username"
+                       class="form-control"
+                       placeholder="john123"/>
+
+                <label for="password">Password</label>
+                <input ng-model="student.password"
+                       name = "userPass"
+                       id="password"
+                       value=""
+                       class="form-control"
+                       type="password"
+                       placeholder="req4321"/>
+                <br><br>
+                <div id="buttonpadding">
+                    <a class="btn btn-primary btn-block" ng-click="model.login(student)">Login</a>
+                    <a class="btn btn-block btn-warning" href="#/student/register">Register</a>
+                    <a href="/auth/facebook"
+                       class="btn btn-danger btn-block">
+                        <span class="fa fa-google-plus"></span>
+                        Google
+                    </a>
+
+
+                </div>
+                <br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

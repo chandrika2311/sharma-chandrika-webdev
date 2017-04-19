@@ -1,0 +1,112 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#/">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a ng-click = "model.studentList()">My Students</a>
+                </li>
+                <li><a href="#/mentor/projects">My Projects</a>
+                </li>
+                <li>
+                    <a href="#/mentor">
+                        <span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span>
+                    </a>
+                </li>
+                <li><a ng-click="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container-fluid" id = "bodyProfile">
+    <br>
+    <div class="row-fluid">
+        <div class="span10 offsetHalf">
+            <i class="icon-screenshot icon-5x" style="color:#ee1111;"></i>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row-fluid">
+        <h1 class="pull-center" ng-model ="model.user">Welcome back
+            <strong>{{model.user.firstname}} {{model.user.lastname}}</strong></h1>
+    </div>
+    <div class="row-fluid">
+
+        <div class="span5 block" id = "hazy">
+            <div class="pull-center">
+                <h1>Basic Profile Information</h1>
+                <h4>First Name : {{model.user.firstname}}<br></h4>
+                <h4>Last Name : {{model.user.lastname}}<br></h4>
+                <h4>Email: {{model.user.email}}<br></h4>
+                <h4>Username: {{model.user.username}}<br></h4>
+                <br>
+                <h1><i class="icon-beaker icon-4x"></i></h1>
+                <button ng-click ="model.updateUser(model.user)"class="btn btn-block btn-warning btn-flat">
+                    Update Basic Information<i class="pull-right icon-chevron-right icon-large"></i></button>
+            </div>
+        </div>
+        <div class="span5 block">
+            <div class="pull-center">
+                <h1>Ongoing Projects</h1>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="x in model.projects">
+                        {{x.Title}} : {{x.Description}}
+                    </li>
+                </ul>
+                <h1><i class="icon-fire icon-4x"></i></h1>
+                <button ng-click = "model.manageProjects(model.user)"
+                        class="btn btn-block btn-warning btn-flat">
+                    Update Project Information<i class="pull-right icon-chevron-right icon-large"></i></button>
+            </div>
+        </div>
+        <div class="span5 block">
+            <div class="pull-center">
+                <h1>Pending Project Applications</h1>
+                <ul class="list-group">
+
+                    <li class="list-group-item" ng-repeat="x in model.student_applications">
+                        <a ng-click = "model.getStudentInfo(x.student_id,x.project_id,model.user._id)"><strong>{{x.student_fname}} {{x.student_lname}}</strong></a>
+                        <p>Applying for :{{x.project_Title}}</p>
+                    </li>
+                </ul>
+                <h1><i class="icon-fire icon-4x"></i></h1>
+                <button ng-click = "model.manageProjects(model.user)"
+                        class="btn btn-block btn-warning btn-flat">
+                    Update Project Information<i class="pull-right icon-chevron-right icon-large"></i></button>
+            </div>
+        </div>
+
+        <div class="span5 block">
+            <div class="pull-center">
+                <!--ng-repeat-->
+                <h2>Students</h2>
+                <ul class="list-group">
+
+                    <li class="list-group-item" ng-repeat="s in model.working_student_list">
+                        <strong>{{s.student_fname}} {{s.student_lname}}</strong>
+                        <p>Working On :{{s.project_Title}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+
+</div>
+
+

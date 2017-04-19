@@ -1,0 +1,211 @@
+body {
+    /*font-family: Pacifico !important;*/
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+        font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    padding-bottom: 50px;
+    overflow-y: scroll ;
+}
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 114px;
+}
+.img {
+
+    max-width: 50px !important;
+    max-height: 50px !important;
+
+
+}
+.container-fluid{
+    padding-bottom: 25px;
+}
+
+
+#buttonpadding{
+    padding-top: 2px;
+}
+.container-fluid{
+    overflow-y: scroll;
+
+}
+
+.navbar.navbar-default{
+    font-family: 'Pacifico', cursive;
+    background-color: darkblue;
+    border-color: white;
+}
+.navbar-default .navbar-brand {
+
+    color:#CF0E47 !important;
+}
+#myNavbar{
+    background-color:midnightblue;
+    color:#CF0E47 !important;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color:#CF0E47 !important;
+    background-color: transparent;
+}
+.nav.navbar-nav.navbar-right>li>a {
+    color: #777;
+}
+.container-fluid>.navbar-header,.container-fluid>.navbar .container>.navbar-collapse,.container>.navbar-header {
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color:midnightblue;
+}
+.navbar.navbar-default.navbar-fixed-bottom{
+    background-color: midnightblue;;
+    border-color: white;
+}
+.brand-style{
+    font-family: 'Pacifico', cursive;
+}
+.glyphicon-man{
+    color: #CF0E47 !important;
+}
+body {
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+}
+.carousel {
+    height: 500px;
+    margin-bottom: 60px;
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.container {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    border-right: 0px;
+    border-left: 0px;
+
+}
+.jumbotron {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-bottom: 0px !important;
+    color: inherit !important;
+    background-color: white !important;
+}
+#hazy{
+    background-color:rgba(255,255,255,.8);
+}
+.a {
+    color: #CF0E47 !important;
+    text-decoration: none;
+
+}
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300');
+
+#bodyProfile {
+    background: url('http://stdaily.ghost.io/content/images/2016/10/KnowledgeHoarding.jpg') no-repeat  center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#333;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+
+}
+
+#bodyProject {
+    background: url('http://aim-drupal-files.s3.amazonaws.com/s3fs-public/project%20principles.jpg') no-repeat  center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#333;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+
+}
+#bodyProfilementor {
+    background: url('https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/7/2016/10/25605-eLearning-Symbols-1-1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#333;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+}
+
+a:link, a:visited {
+    color:#eee;
+}.list-group-item {
+     background-color:rgba(255,255,255,.8) !important;
+ }
+
+.button{
+    background-color:midnightblue !important;
+}
+
+.block {
+    background-color:rgba(0,0,0,0.2);
+    /*height:370px;*/
+    padding-left:12px;
+    padding-right:12px;
+    padding-bottom: 12px;
+}
+
+.block-sm {
+    height:180px;
+}
+
+.btn-flat {
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+    border-radius:0px;
+    border-width:0;
+    background-image:none;
+    padding:16px;
+    margin:0 auto;
+    margin-top:15px;
+    width:70%;
+    font-size:20pt;
+}
+
+/* mini carousel */
+.carousel-inner img {
+    width:100%;
+    height:100%;
+}
+
+#myCarousel {
+    font-size:90%;
+}
+
+.carousel-controls-mini {
+    margin-left:42%;
+}
+
+.carousel-controls-mini > a {
+    border:1px solid #eee;
+    margin:1px;
+    width:20px;
+    display:block;
+    float:left;
+    text-align:center;
+}
+
+#carousel-bounding-box {
+    margin:0 auto;
+    width:300px;
+}
+
+#bodyid{
+    background: url('http://m.discovermine.com/images/view/572b5b5c27f7bae16f000204/knowledge%20supply%20chain.jpg') no-repeat;
+}
+

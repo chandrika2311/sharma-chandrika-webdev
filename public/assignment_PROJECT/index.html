@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MentorStudentApp">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <!--JQuery:-->
+
+    <link href="css/style_project.css" rel = "stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!-- Latest compiled and minified JavaScript -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.css" rel="stylesheet">
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>-->
+    <!-- loading the angular core library from CDN-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Macondo|Pacifico" rel="stylesheet">
+    <!-- loading the angular core library from CDN-->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+
+    <script type="text/javascript" src="js/textAngular-rangy.min.js"></script>
+    <script type="text/javascript" src="js/textAngular-sanitize.min.js"></script>
+    <script type="text/javascript" src="js/textAngular.min.js"></script>
+    <!-- loading app.js file-->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="directives/sortable.directive.client.js"></script>
+    <!-- Controllers-->
+
+    <!--Project Related-->
+    <script src="./views/Profile/Controller/MentorController/MentorProfileController.client.js"></script>
+    <script src="./views/Profile/Controller/MentorController/MentorLoginController.client.js"></script>
+    <script src="./views/Profile/Controller/MentorController/MentorRegisterController.client.js"></script>
+    <script src="./views/Profile/Controller/StudentController/StudentProfileController.client.js"></script>
+    <script src="./views/Profile/Controller/StudentController/StudentLoginController.client.js"></script>
+    <script src="./views/Profile/Controller/StudentController/StudentRegisterController.client.js"></script>
+    <script src ="views/NavigateStudentForCourseProject/NavigatingCourseForStudent/NavigateCourseController.client.js"></script>
+    <script src = "views/NavigateStudentForCourseProject/InitialNavigationStudentForCourseMentor/NavigationController.client.js"></script>
+    <script src ="views/NavigateStudentForCourseProject/CourseListForStudent/courseList.controller.client.js"></script>
+    <script src ="views/Profile/Controller/StudentController/StudentUpdateProfileController.client.js"></script>
+    <script src ="views/Projects/CreateProject/CreateProjectController.client.js"></script>
+    <script src ="views/Projects/ProjectList/List/ProjectListController.client.js"></script>
+    <script src="views/Projects/ProjectList/ProjectDetails/ProjectUpdate.Mentor.view.client.js"></script>
+    <script src="views/NavigateStudentForCourseProject/NavigatingMentorForStudent/NavigationMentorController.client.js"></script>
+    <script src="views/NavigateStudentForCourseProject/StudentNavigationOfMentorForProject/MentorDetailsController.js"></script>
+    <script src="views/NavigateStudentForCourseProject/StudentNavigationOfMentorForProject/MentorProjectViewController.client.js"></script>
+    <script src="views/Profile/Controller/MentorController/MentorApprovalController.client.js"></script>
+    <script src="views/Projects/ProjectList/List/ProjectDetailsController.client.js"></script>
+    <script src="views/Profile/Controller/AdminController/AdminManageController.client.js"></script>
+    <script src="views/Profile/Controller/AdminController/AdminManageUsers.client.js"></script>
+    <script src="views/Profile/Controller/AdminController/AdminManageCourses.client.js"></script>
+    <!--Project Related-->
+    <!-- Services-->
+
+    <script src ="services/udacity.service.client.js"></script>
+    <script src = "services/project.service.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+    <title>Project Home Page</title>
+</head>
+<body>
+<div ng-view></div>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div id="section1" class="jumbotron">
+    <h2 ng-show = "model.error">
+        {{model.error}}</h2>
+    <h2 ng-show = "model.message">
+        {{model.message}}</h2>
+</div>
+<div id="section2" class="container-fluid" ng-model="model.course">
+    <h2>Course Information</h2>
+    <h3>{{model.course.title}}</h3>
+    <img style="width: 500px" src="{{model.course.image}}">
+
+    <p><strong>Required Knowledge:</strong> {{model.course.required_knowledge}}</p>
+    <p><strong>Expected Learning:</strong> {{model.course.expected_learning}}</p>
+</div>
+<button type ="button" class="btn btn-block btn-warning" ng-click = "model.deleteCourse(model.course)">Delete</button>

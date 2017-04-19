@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#/">MentorMine</a>
+        </div>
+
+    </div>
+
+</nav>
+<div class="alert alert-danger" ng-show="model.error">
+    {{model.error}}
+</div>
+
+<div class="container-fluid" id = "bodyProfilementor">
+    <br>
+    <div class="row-fluid">
+        <div class="span5 offsetHalf" >
+            <div  class="col-sm-12" id = "hazy">
+                <h1>Manage Users</h1>
+                <button ng-click="model.manageUsers(model.users)"
+                        class="btn btn-block btn-primary">All Users</button>
+            </div>
+
+        </div>
+        <br><br><br><br>
+    </div>
+    <br><br><br><br>
+    <div class="row-fluid">
+        <div class="span5 offsetHalf" >
+            <div  class="col-sm-12" id = "hazy">
+                <h1>Manage Courses</h1>
+                <button ng-click="model.manageCourses(model.courses)"
+                        class="btn btn-block btn-warning">All Courses</button>
+
+            </div>
+
+        </div>
+        <br><br><br><br>
+    </div>
+    <br><br><br><br>
+    <div class="row-fluid">
+        <div class="span5 offsetHalf" >
+            <div  class="col-sm-12" id = "hazy">
+                <h1>Manage Projects</h1>
+                <button ng-click="model.manageProjects(model.projects)"
+                        class="btn btn-block btn-danger">All Projects</button>
+
+            </div>
+
+        </div>
+        <br><br><br><br>
+    </div>
+
+</div>

@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a href="#about">My Students</a>
+                </li>
+                <li><a href="#/user/{{model.studentId}}/projects">My Projects</a>
+                </li>
+                <li>
+                    <a href="#/student/{{model.studentId}}">
+                        <span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span>
+                    </a>
+                </li>
+                <li><a ng-click="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container-fluid" id = "bodyProfile">
+    <br>
+    <div class="row-fluid">
+        <div class="span10 offsetHalf">
+            <i class="icon-screenshot icon-5x" style="color:#ee1111;"></i>
+        </div>
+    </div>
+    <br>
+    <div class="row-fluid">
+
+        <div class="span5 block" id = "hazy">
+            <div class="pull-center">
+                <h2>Basic Profile Information</h2>
+                <strong><p>First Name : {{model.user_details.firstname}}<br></p></strong>
+                <strong><p>Last Name : {{model.user_details.lastname}}<br></p></strong>
+                <strong><p>Email: {{model.user_details.email}}<br></p></strong>
+                <strong><p>Username: {{model.user_details.username}}<br></p></strong>
+                <br>
+                <strong><h1><i class="icon-beaker icon-4x"></i></h1></strong>
+
+            </div>
+        </div>
+        <div class="span5 block" id = "hazy">
+            <div class="pull-center">
+                <h1>Ongoing Projects</h1>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="x in model.user_projects">
+                        <strong><a ng-click = "model.checkProjectOut(x._id)">{{x.Title}}</a></strong>
+                        <br>
+                        {{x.Description}}
+                    </li>
+                </ul>
+                <h1><i class="icon-fire icon-4x"></i></h1>
+
+            </div>
+        </div>
+
+
+    </div>
+    <br><br><br>
+</div>
+
+

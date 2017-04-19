@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.userId">
+
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a href="#/student/{{model.userId}}"><span class = "glyphicon glyphicon-user pull-right "></span></a>
+                </li>
+                <li><a ng-click="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+<div id="section2" class="container-fluid" ng-model="model.project_details">
+    <h2>Project Details</h2>
+    <label for="first">Project Title</label>
+    <input ng-model="model.project_details.Title"
+           id="first"
+           class="form-control"
+           type="textarea"
+           placeholder="Project Details"/>
+
+    <label for="last">Description</label>
+    <input ng-model="model.project_details.Description"
+           id="last"
+           class="form-control"
+           type="textarea"
+           placeholder="Description"/>
+
+    <label for="email">SkillSet Required</label>
+    <input ng-model="model.project_details.Skillset"
+           id="email"
+           class="form-control"
+           type="email"
+           placeholder="Required SkillSet"/>
+    <label>Concepts Involved</label>
+    <textarea ng-model="model.project_details.ConceptsInvolved" class="form-control"
+              rows="4"placeholder="Concepts Involved"></textarea>
+
+
+    <label>Basic Requirements</label>
+    <textarea ng-model="model.project_details.BasicRequirements" class="form-control"
+              rows="4"placeholder="Basic Requirements"></textarea>
+
+    <label>Courses Required</label>
+    <textarea ng-model="model.project_details.CourseRequirements" class="form-control"
+              rows="4"placeholder="Course Requirements"></textarea>
+
+</div>
+<button type ="button" class="btn btn-block btn-warning" ng-click = "model.updateProject(model.project_details)">Update</button>
+
+
+
+
+
+

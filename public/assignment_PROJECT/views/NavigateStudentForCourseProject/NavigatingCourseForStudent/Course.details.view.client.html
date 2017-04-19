@@ -1,0 +1,69 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a href="#/student/{{model.user._id}}"><span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span></a>
+                </li>
+                <li><a href="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container-fluid">
+    <div class="alert alert-danger" ng-show="model.error">
+        {{model.error}}
+    </div>
+
+    <div class="col-sm-8" >
+        <div class="row container-fluid" ng-model = "model.coursedetails">
+            <h1>Course Information</h1>
+            <img style="width:500px" ng-src = "{{model.coursedetails.image}}">
+            <p><b>Required Knowledge:</b> {{model.coursedetails.required_knowledge}}</p>
+        </div>
+
+        <div class="container-fluid" ng-repeat="x in model.instructors">
+            <h2>Instructor Information</h2>
+            <h3>{{x.name}}</h3>
+            <img style="width:500px" ng-src = {{x.image}}>
+            <h3>{{x.bio}}</h3>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-block btn-warning"
+                ng-click = "model.enrolIntoCourse(model.userId,model.coursedetails)">
+            Enrol to Course
+        </button>
+        <a ng-href="{{model.coursedetails.homepage}}" class="btn btn-block btn-primary" role="button">Course Homepage</a>
+        <button type="button" class="btn btn-block btn-warning"
+                ng-click = "model.viewMyCourses()">
+            View My Courses
+        </button>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span>
+        </div>
+    </div>
+</footer>
+

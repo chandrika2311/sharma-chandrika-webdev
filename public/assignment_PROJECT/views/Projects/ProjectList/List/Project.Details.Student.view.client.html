@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#/">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+
+                <li><a href="#/student"><span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span></a>
+                </li>
+                <li><a href="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container-fluid"id="section2">
+
+    <div class="col-sm-8" >
+        <div class="row container-fluid" ng-model = "model.project_details" id = "bodyProject" >
+
+
+            <h1>Project Details</h1>
+            <div class="container-fluid"id = "hazy">
+                <p><b>Project Title:</b> {{model.project_details.Title}}</p>
+            </div>
+            <div class="container-fluid"id = "hazy">
+            <p><b>Project Description:</b> {{model.project_details.Description}}</p>
+            </div>
+
+            <div class="container-fluid"id = "hazy">
+            <p><b>ConceptsInvolved:</b> {{model.project_details.ConceptsInvolved}}</p>
+            </div>
+            <div class="container-fluid"id = "hazy">
+            <p><b>Skillset:</b> {{model.project_details.Skillset}}</p>
+            </div>
+            <div class="container-fluid"id = "hazy">
+            <p><b>CourseRequirements:</b>
+                <p>{{model.project_details.CourseRequirements}}</p>
+            </div>
+
+            </div>
+        </div>
+    </div>
+

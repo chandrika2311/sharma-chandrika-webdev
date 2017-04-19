@@ -1,0 +1,89 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#/">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a href="#/mentor"><span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span></a>
+                </li>
+                <li><a ng-click="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+<div class="container-fluid" id = "bodyProfile">
+    <br>
+    <div class="row-fluid">
+        <div class="span10 offsetHalf">
+
+            <i class="icon-screenshot icon-5x" style="color:#ee1111;"></i>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row-fluid" id = "hazy">
+
+    </div>
+    <div class="row-fluid">
+
+        <div class="span5 offsetHalf block">
+            <form>
+                <h2>Create Projects</h2>
+                <div class="form-group">
+                    <label for="ProjectTitle">Title</label>
+                    <input ng-model = "project.Title"type="text" class="form-control"
+                           id="ProjectTitle"
+                           aria-describedby="Project Title"
+                           placeholder="Enter Project Title">
+
+                </div>
+                <div class="form-group">
+                    <label for="ProjectDescription">Project Description</label>
+                    <input ng-model = "project.Description"
+                           type="text" class="form-control" id="ProjectDescription" placeholder="ProjectDescription">
+                    <small id="Description" class="form-text text-muted">Brief description of the project</small>
+                </div>
+                <div class="form-group">
+                    <label for="ConceptsInvolved">Key Concepts Involved</label>
+                    <textarea  ng-model = "project.ConceptsInvolved"class="form-control" id="ConceptsInvolved" rows="5"></textarea>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Skillset">Required Skillset</label>
+                    <textarea ng-model = "project.Skillset" class="form-control" id="Skillset" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="BasicRequirements">Basic Student Requirements</label>
+                    <textarea ng-model = "project.BasicRequirements" class="form-control" id="BasicRequirements" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="CourseRequirements">Course Requirements</label>
+                    <textarea ng-model = "project.CourseRequirements" class="form-control" id="CourseRequirements" rows="4"></textarea>
+                </div>
+
+
+                <button ng-click = "model.createProject(project)"type="submit" class="btn btn-block btn-warning">Create Project</button>
+            </form>
+        </div>
+
+
+    </div>
+    <br><br><br>
+
+</div>

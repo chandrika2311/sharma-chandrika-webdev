@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a href="#/student/{{model.user._id}}"><span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span></a>
+                </li>
+                <li><a href="model.logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<div class="container-fluid">
+    <a href = "#" type = "button"class = "btn btn-large btn-block">
+        <div class="well" id = "image_mentorsearch">
+            <a ng-click = "model.getMentors()">
+            <img src="https://www.incharge.org/wp-content/uploads/2015/07/Teacher-Resources.jpg" class="img-responsive"/>
+            <p id = "text">Mentor Search</p>
+            </a>
+        </div>
+    </a>
+    <a type = "button" class = "btn btn-large btn-block">
+    <div class="well" id = "image_coursesearch">
+        <a ng-click = "model.getcourses()"> <img src="https://tmc.gov.in/images/courses.jpg" class="img-responsive"/>
+            <p id = "text">Course Search</p>
+        </a>
+    </div>
+    </a>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span>
+        </div>
+    </div>
+</nav>
+

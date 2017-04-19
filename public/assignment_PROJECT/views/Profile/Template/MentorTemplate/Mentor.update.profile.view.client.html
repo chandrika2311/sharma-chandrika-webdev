@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand brand-style" href="#">MentorMine</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-model = "model.user">
+
+            <ul class="nav navbar-nav pull-right">
+
+
+                <li><a href="#/student/{{model.user._id}}"><span class = "glyphicon glyphicon-user pull-right glyphicon-man"></span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div id="section1" class="jumbotron">
+    <h2 ng-show = "model.error">
+        {{model.error}}</h2>
+    <h2 ng-show = "model.message">
+        {{model.message}}</h2>
+</div>
+<div id="section2" class="container-fluid" ng-model="model.user">
+    <h2>Basic Information</h2>
+    <label for="first">First Name</label>
+    <input ng-model="model.user.firstname"
+           id="first"
+           class="form-control"
+           type="text"
+           placeholder="First Name"/>
+
+    <label for="last">Last Name</label>
+    <input ng-model="model.user.lastname"
+           id="last"
+           class="form-control"
+           type="text"
+           placeholder="Last Name"/>
+
+    <label for="email">Email</label>
+    <input ng-model="model.user.email"
+           id="email"
+           class="form-control"
+           type="email"
+           placeholder="Email"/>
+
+    <label>Username</label>
+    <input ng-model="model.user.username"
+           class="form-control"
+           type="text"
+           placeholder="Username"/>
+
+    <label>Password</label>
+    <input ng-model="model.user.password"
+           class="form-control"
+           type="password"
+           placeholder="Password"/>
+    </div>
+<button type ="button" class="btn btn-block btn-warning" ng-click = "model.update(model.user)">Update</button>
+
+
+
+
+
+

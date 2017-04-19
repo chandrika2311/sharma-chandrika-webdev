@@ -34,7 +34,7 @@
         function unregisterUser(user) {
             var answer = confirm("Are you sure?");
             console.log(answer);
-            if(answer) {
+            if(answer){
                 UserService
                     .deleteUser(user._id)
                     .success(function () {
@@ -45,6 +45,5 @@
                     });
             }
         }
-
     }
 })();
