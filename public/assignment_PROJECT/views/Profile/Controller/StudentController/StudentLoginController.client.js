@@ -17,32 +17,38 @@
         vm.login = login;
         vm.logout = logout;
         function initial() {
+            if ($rootScope.currentUser != null) {
+                $location.url('/student');
+            }
             vm.error = "";
         }
         initial();
         function login(user) {
+
+
             UserService
                 .login(user)
                 .then(
                     function (response) {
                         var user = response.data;
-                        if(user.role =="student"){
+                        if (user.role == "student") {
                             $rootScope.currentUser = user;
                             // $location.url('/mentor/'+user._id);
                             $location.url('/student');
 
                         }
-                        if(user.role =="admin"){
+                        if (user.role == "admin") {
                             $rootScope.currentUser = user;
                             // $location.url('/mentor/'+user._id);
                             $location.url('/admin');
 
                         }
-                        else{
+                        else {
                             vm.error = "Invalid Credentials";
                         }
 
                     })
+
         }
 
 

@@ -12,7 +12,12 @@
 
         $routeProvider
             .when("/", {
-                templateUrl: "views/Home/Home.view.client.html"
+                templateUrl: "views/Home/Home.view.client.html",
+                controller: "HomeController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
             })
             .when("/mentor/login", {
                 templateUrl: "views/Profile/Template/MentorTemplate/Mentor.login.view.client.html",
@@ -247,4 +252,24 @@ var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
     });
     return deferred.promise;
 };
+var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope)
+{
+    var deferred = $q.defer();
+
+    $http.get('/api/loggedin').success(function(user)
+    {
+        console.log("inside chek logged in",user);
+        $rootScope.errorMessage = null;
+        // User is Authenticated
+        if (user !== '0')
+        {
+            $rootScope.currentUser = user;
+            $location.url('/');
+        }
+        deferred.resolve();
+    });
+
+    return deferred.promise;
+};
+
 

@@ -6,20 +6,20 @@ module.exports = function (app, CourseModel) {
 
     app.post('/api/udacity/student/:userId/enroll/:cid', enrolToCourse);
     app.get('/api/allCourses', findAllCourses);
-    app.get('/api/course/:key', findcoursebyKey);
+    // app.get('/api/course/:key', findcoursebyKey);
     app.get('/api/udacity/student/:userId/course', findAllCoursesForStudent);
     app.get('/api/udacity/course/:courseId', findCourseById);
     app.delete('/api/course/:courseId',deleteCourse);
 
-    function findcoursebyKey(req,res) {
-        var key = req.params.key;
-        CourseModel.findcoursebyKey(key)
-            .then(function (course) {
-                res.send(course)
-
-            })
-
-    }
+    // function findcoursebyKey(req,res) {
+    //     var key = req.params.key;
+    //     CourseModel.findcoursebyKey(key)
+    //         .then(function (course) {
+    //             res.send(course)
+    //
+    //         })
+    //
+    // }
     function deleteCourse(req,res) {
         var courseId = req.params.courseId;
         CourseModel.deleteCourse(courseId)

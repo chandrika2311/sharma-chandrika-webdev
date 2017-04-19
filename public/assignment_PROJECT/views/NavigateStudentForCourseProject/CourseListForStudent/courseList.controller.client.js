@@ -32,7 +32,6 @@
                     for(count = 0; count < vm.courses1.length; count++){
                         value = vm.courses1[count];
 
-
                         UdacityService.findCourseById(value)
                             .success(function (course_found) {
                                 vm.courses.push(course_found);
@@ -45,10 +44,12 @@
                     console.log("err:",err);
 
                 });
+
             vm.coursedetails = $rootScope.coursedetails;
             vm.instructors = $rootScope.instructors;
         }init();
         function CourseDetails(course) {
+
 
             $rootScope.coursedetails = course;
             $rootScope.instructors = course.instructors;
