@@ -63,7 +63,7 @@ module.exports = function (app, UserModel) {
     };
     //passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
 
-    //passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+    passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
 
     passport.serializeUser(serializeUser);
