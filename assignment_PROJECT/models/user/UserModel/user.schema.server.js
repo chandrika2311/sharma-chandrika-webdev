@@ -21,3 +21,5 @@ var UserSchema = mongoose.Schema({
 },{collection:'Project.User'});
 
 module.exports = UserSchema;// puts something in the namespace for someone else outside to use it.
+
+

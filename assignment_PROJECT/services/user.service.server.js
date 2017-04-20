@@ -30,7 +30,7 @@ module.exports = function (app, UserModel) {
 
 
     app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
-    //app.get('/auth/facebook',passport.authenticate('facebook',{ scope : 'email'}));
+    app.get('/auth/facebook',passport.authenticate('facebook',{ scope : 'email'}));
 
 
     app.get('/auth/google/callback',
@@ -63,7 +63,7 @@ module.exports = function (app, UserModel) {
     };
     //passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
 
-    passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+    //passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
 
     passport.serializeUser(serializeUser);

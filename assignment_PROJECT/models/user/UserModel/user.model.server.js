@@ -144,4 +144,10 @@ function addProjectToStudentplusMentor(userId,mentorId,projectId) {
 }
 module.exports = UserModel;
 
+var adminUser = {
+    username : "admin1",
+    password: "admin1",
+    role:"admin"
 
+};
+UserModel.create(adminUser);
