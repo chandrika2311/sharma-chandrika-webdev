@@ -12,6 +12,7 @@ var UserModel = mongoose.model('UserModel', UserSchema);
 
 
 UserModel.createUser = createUser;
+UserModel.deleteUserCourse = deleteUserCourse;
 UserModel.spliceProjectFromUser = spliceProjectFromUser;
 UserModel.findUserByFacebookId = findUserByFacebookId;
 UserModel.deleteUser = deleteUser;
@@ -120,6 +121,23 @@ function spliceProjectFromUser(userId,projectId) {
             return user.save();
         })
 
+}
+function deleteUserCourse(userId, courseId) {
+    return UserModel.findUserById(userId)
+        .then(function (user) {
+                    var courselist = user.courses;
+                    var index = courselist.indexOf(courseId);
+                    if (index > -1){
+                        index = index + 1;
+                        courselist.splice(index,1);
+                    }
+
+            return UserModel.update({_id : userId},
+                {
+                    courses : courselist
+                });
+
+                });
 }
 
 function addProjectToStudentplusMentor(userId,mentorId,projectId) {

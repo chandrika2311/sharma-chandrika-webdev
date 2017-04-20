@@ -33,33 +33,22 @@
 
         function deleteCourse(course) {
             users = course._user;
-
-            UdacityService.deleteCourse(course)
-                .success(function (response) {
-
                     for(a = 0; a < users.length ; a++){
-                        return UserService.findUserById(users[a])
-                            .success(function (user) {
-                                var courselist = user.courses;
-                                var index = courselist.indexOf(course._id);
-                                if (index > -1){
-                                    index = index + 1;
-                                    courselist.splice(index,1);
-                                }
-                                user.courses = courselist;
-
-                                $location.url('/admin/courses');
-                                return user;
-                            },function (error) {
-                                vm.error = "Error in splice of users during course deletion";
+                        value = users[a];
+                        UserService.deleteUserCourses(value,course._id)
+                            .success(function (response) {
+                                UdacityService.deleteCourse(course)
+                                    .success(function (response) {
+                                        $location.url('/admin/courses');
+                                    });
+                            })
+                            .error(function (err) {
+                                console.log(err);
 
                             })
-                    }
 
-                },function (error) {
-                    vm.error = "Error in deletion of course";
+                }
 
-                })
 
     }
     function createCourse() {

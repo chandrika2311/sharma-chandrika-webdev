@@ -1,10 +1,3 @@
-/**
- * Created by chandrika2311 on 4/17/17.
- */
-/**
- * Created by chandrika2311 on 2/14/17.
- */
-
 (function(){
     angular
         .module("MentorStudentApp")
@@ -54,7 +47,7 @@
             ProjectService.addProjectToStudentWorking(vm.studentId,vm.projectId,vm.mentorId)
                 .success(function (response) {
                     console.log("accept response", response);
-                    $location.url('/mentor/'+vm.mentorId);
+                    $location.url('/mentor');
                 })
 
         }
@@ -62,7 +55,7 @@
             ProjectService.removeProjectfromApplication(vm.studentId,vm.projectId,vm.mentorId)
                 .success(function (response) {
                     console.log("decline response", response);
-                    $location.url('/mentor/'+vm.mentorId);
+                    $location.url('/mentor');
                 })
 
         }

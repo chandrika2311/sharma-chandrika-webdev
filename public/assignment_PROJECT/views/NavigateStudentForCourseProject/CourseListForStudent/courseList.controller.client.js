@@ -25,7 +25,7 @@
                     })
         }
         function init() {
-            console.log(vm.userId);
+
             UserService.findCourseForUser(vm.userId)
                 .success(function (response) {
                         vm.courses1 = response.courses;

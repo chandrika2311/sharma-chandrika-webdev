@@ -21,8 +21,11 @@
             if ($rootScope.currentUser != null) {
                 if($rootScope.currentUser.role =="admin"){
                     $location.url('/admin');
-                }else{
+                }if($rootScope.currentUser.role =="student"){
                     $location.url('/student');
+                }
+                if($rootScope.currentUser.role =="mentor"){
+                    $location.url('/mentor');
                 }
 
             }

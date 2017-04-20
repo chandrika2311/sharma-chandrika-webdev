@@ -24,28 +24,30 @@
 
         function init() {
             vm.error = "";
+
+        vm.coursedetails = $rootScope.coursedetails;
+        vm.instructors = $rootScope.instructors;
+        }init();
+        function searchCourseNow(keyword) {
             UdacityService
                 .findCourses()
                 .success(function (response) {
                     vm.keyPresent = [];
                     vm.error = "";
                     vm.courses = response.courses;
+                    for(x in vm.courses){
+                        var str = vm.courses[x].expected_learning;
+                        if(str.includes(keyword) === true){
+                            var value = vm.courses[x];
+                            vm.keyPresent.push(value);
+                        }
+                    }
+                    if(vm.keyPresent.length < 1){
+                        vm.error = 'No Courses Found, Try another search criteria';
+                    }
 
                 });
-        vm.coursedetails = $rootScope.coursedetails;
-        vm.instructors = $rootScope.instructors;
-        }init();
-        function searchCourseNow(keyword) {
-            for(x in vm.courses){
-                var str = vm.courses[x].expected_learning;
-                if(str.includes(keyword) === true){
-                    var value = vm.courses[x];
-                    vm.keyPresent.push(value);
-                }
-            }
-            if(vm.keyPresent.length < 1){
-                vm.error = 'No Courses Found, Try another search criteria';
-            }
+
 
         }
         function CourseDetails(course) {

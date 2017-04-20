@@ -34,7 +34,7 @@
         function ApplytoProject(studentId, projectId) {
             ProjectService.addStudentApplication(studentId,projectId)
                 .success(function (message) {
-                   $location.url('/student/'+vm.studentId);
+                   $location.url('/student');
                 });
             //updates Project database and student database
 

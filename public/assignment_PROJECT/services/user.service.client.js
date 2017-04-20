@@ -10,6 +10,7 @@
 
         var api = {
             "logout": logout,
+            "deleteUserCourses": deleteUserCourses,
             "spliceProjectFromUser": spliceProjectFromUser,
             "login":login,
             "register": register,
@@ -29,7 +30,12 @@
         function login(user) {
             return $http.post("/api/login", user);
         }
+        function deleteUserCourses(userId,courseId) {
+            course_id = {courseId : courseId};
+            return $http.post("/api/student/deletecourse/"+userId,course_id);
 
+
+        }
         function logout(user) {
             return $http.post("/api/logout");
         }

@@ -12,6 +12,7 @@ module.exports = function (app, UserModel) {
 
     var bcrypt = require("bcrypt-nodejs");
     app.post('/api/login', passport.authenticate('local'), login);
+    app.post("/api/student/deletecourse/:uid",deleteUserCourse);
     app.post('/api/logout', logout);
     app.post('/api/register', register);
     app.post('/api/splice/project/:userId', spliceProjectFromUser);
@@ -171,7 +172,16 @@ module.exports = function (app, UserModel) {
             });
 
     }
+    function deleteUserCourse(req,res) {
+        var course = req.body;
+        var courseId = course.courseId;
+        var userId = req.params.uid;
+        UserModel.deleteUserCourse(userId,courseId)
+            .then(function (response) {
+                res.send(response);
+            })
 
+    }
 
     function updateUser( req, res) {
         var userId = req.params['userId'];

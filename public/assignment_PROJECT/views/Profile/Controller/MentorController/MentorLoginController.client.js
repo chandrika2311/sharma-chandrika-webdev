@@ -16,8 +16,8 @@
     vm.error = "";
         function initial() {
             if ($rootScope.currentUser != null) {
-                if($rootScope.currentUser.role =="admin"){
-                    $location.url('/admin');
+                if($rootScope.currentUser.role =="mentor"){
+                    $location.url('/mentor');
                 }if($rootScope.currentUser.role =="admin"){
                     $location.url('/admin');
                 }else{

@@ -13,6 +13,7 @@
     vm.register = register;
     vm.error = "";
         function initial() {
+
             vm.hello = "hello my friend";
         }
         initial();
