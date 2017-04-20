@@ -19,15 +19,13 @@
                 if($rootScope.currentUser.role =="admin"){
                     $location.url('/admin');
                 }if($rootScope.currentUser.role =="admin"){
-                    $location.url('/mentor');
+                    $location.url('/admin');
                 }else{
                     $location.url('/');
                 }
-
                 vm.error = "";
                 vm.hello = "hello my friend";
             }
-
         }
         initial();
 
@@ -40,20 +38,17 @@
                             .login(user)
                             .success(
                                 function (response) {
-
-                                    var user = response;
-                                    if(user !=null){
-                                        if(user.role =="mentor"){
-                                            $rootScope.currentUser = user;
+                                    var user1 = response;
+                                    if(user1 !=null){
+                                        if(user1.role =="mentor"){
+                                            $rootScope.currentUser = user1;
                                             // $location.url('/mentor/'+user._id);
                                             $location.url('/mentor');
-
                                         }
-                                        if(user.role =="admin"){
-                                            $rootScope.currentUser = user;
+                                        if(user1.role =="admin"){
+                                            $rootScope.currentUser = user1;
                                             // $location.url('/mentor/'+user._id);
                                             $location.url('/admin');
-
                                         }
                                         else{
                                             vm.error = "Invalid Credentials";
@@ -67,6 +62,9 @@
                     }else{
                         vm.error = "Invalid Credentials";
                     }
+
+                },function (err) {
+                    vm.error = err;
 
                 });
 

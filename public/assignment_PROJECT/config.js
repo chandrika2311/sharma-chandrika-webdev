@@ -38,6 +38,7 @@
                 controllerAs: "model",
                 resolve: { loggedin: checkLoggedin }
             })
+
             .when("/mentor/update", {
                 templateUrl: "views/Profile/Template/MentorTemplate/Mentor.update.profile.view.client.html",
                 controller: "MentorProfileController",

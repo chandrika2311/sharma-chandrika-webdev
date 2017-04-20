@@ -17,6 +17,7 @@
         vm = this;
         vm.deleteCourse = deleteCourse;
         vm.logout = logout;
+        vm.error = "";
         vm.course = "";
 
         function init() {
@@ -32,24 +33,37 @@
 
         function deleteCourse(course) {
             users = course._user;
-            for(a = 0; a < users.length ; a++){
-                return UserService.findUserById(users[a])
-                    .success(function (user) {
-                        var courselist = user.courses;
-                        var index = courselist.indexOf(course._id);
-                        if (index > -1){
-                            courselist.splice(index,1);
-                        }
-                        user.courses = courselist;
-                        user.save();
-                    })
-            }
 
             UdacityService.deleteCourse(course)
                 .success(function (response) {
-                    $location.url('/admin/courses');
+
+                    for(a = 0; a < users.length ; a++){
+                        return UserService.findUserById(users[a])
+                            .success(function (user) {
+                                var courselist = user.courses;
+                                var index = courselist.indexOf(course._id);
+                                if (index > -1){
+                                    index = index + 1;
+                                    courselist.splice(index,1);
+                                }
+                                user.courses = courselist;
+
+                                $location.url('/admin/courses');
+                                return user;
+                            },function (error) {
+                                vm.error = "Error in splice of users during course deletion";
+
+                            })
+                    }
+
+                },function (error) {
+                    vm.error = "Error in deletion of course";
 
                 })
+
+    }
+    function createCourse() {
+            UdacityService.createCourse()
 
     }
         function logout() {
