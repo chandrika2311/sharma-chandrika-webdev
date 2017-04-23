@@ -2,7 +2,7 @@
  * Created by chandrika2311 on 2/28/17.
  */
 
-module.exports = function (app, UserModel) {
+module.exports = function (app, UserModel1) {
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserByUserId);
     app.put("/api/user/:userId", updateUser);
@@ -28,7 +28,7 @@ module.exports = function (app, UserModel) {
             email: newUser.email,
             password: newUser.password
         };
-        UserModel
+        UserModel1
             .createUser(newUser1)
             .then(function(user) {
 
@@ -42,7 +42,7 @@ module.exports = function (app, UserModel) {
         var userId = req.params['userId'];
         console.log('in userId');
         console.log(userId);
-        UserModel
+        UserModel1
             .findUserById(userId)
             .then(function(user) {
 
@@ -55,7 +55,7 @@ module.exports = function (app, UserModel) {
     function findUserByCredentials( req, res) {
         var username = req.query['username'];
         var password = req.query['password'];
-        UserModel
+        UserModel1
             .findUserByCredentials(username, password)
             .then(function(user) {
                 console.log('user found in credentials');
@@ -71,7 +71,7 @@ module.exports = function (app, UserModel) {
     function updateUser( req, res) {
         var userId = req.params['userId'];
         var olduser = req.body;
-        UserModel
+        UserModel1
             .updateUser(userId, olduser)
             .then(function(user) {
                 res.send(user);
@@ -85,7 +85,7 @@ module.exports = function (app, UserModel) {
         var username = req.query['username'];
         console.log('in username');
 
-        UserModel
+        UserModel1
             .findUserByUsername(username)
             .success(function(user) {
                 res.send(user);
@@ -104,7 +104,7 @@ module.exports = function (app, UserModel) {
 
     function deleteUser(req, res) {
         var userId = req.params.userId;
-        UserModel
+        UserModel1
             .deleteUser(userId)
             .then(function (response) {
                 console.log('sucess delete user');

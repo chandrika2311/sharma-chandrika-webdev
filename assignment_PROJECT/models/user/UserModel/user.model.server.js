@@ -160,6 +160,9 @@ function addProjectToStudentplusMentor(userId,mentorId,projectId) {
         })
 
 }
+function addProjectToStudentplusMentor() {
+    
+}
 module.exports = UserModel;
 //
 // var adminUser = {

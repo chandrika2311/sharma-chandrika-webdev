@@ -4,33 +4,33 @@
 
     var mongoose = require('mongoose');
     var UserSchema = require('./user.schema.server');
-    var UserModel = mongoose.model('UserModel', UserSchema);
+    var UserModel1 = mongoose.model('UserModel1', UserSchema);
 
 
 
-    UserModel.createUser = createUser;
-    UserModel.findUserById = findUserById;
-    UserModel.findUserByUsername = findUserByUsername;
-    UserModel.findUserByCredentials = findUserByCredentials;
-    UserModel.deleteUser = deleteUser;
-    UserModel.updateUser = updateUser;
-    UserModel.setModel = setModel;
+UserModel1.createUser = createUser;
+UserModel1.findUserById = findUserById;
+UserModel1.findUserByUsername = findUserByUsername;
+UserModel1.findUserByCredentials = findUserByCredentials;
+UserModel1.deleteUser = deleteUser;
+UserModel1.updateUser = updateUser;
+UserModel1.setModel = setModel;
 
 
 function createUser(user) {
     console.log('cu');
     console.log('in model.createUser');
     console.log(user);
-    return UserModel.create(user);
+    return UserModel1.create(user);
 }
 function findUserByCredentials(username, password) {
     console.log(username);
     console.log(password);
-    return UserModel.find({username: username, password: password});
+    return UserModel1.find({username: username, password: password});
 }
 function updateUser(userId, user) {
     console.log('in model.updateUser');
-    return UserModel.update({_id : userId},
+    return UserModel1.update({_id : userId},
         {
             firstname: user.firstname,
             lastname: user.lastname,
@@ -45,16 +45,16 @@ function setModel(_model) {
 function findUserByUsername(username) {
     console.log(username);
     console.log('in model.findUserByUsername');
-    return UserModel.find({ username: username });
+    return UserModel1.find({ username: username });
 
 }
 
 function findUserById(userId){
-    return UserModel.findById(userId);
+    return UserModel1.findById(userId);
 }
 
 function deleteUser(userId) {
-    return UserModel.findById({_id: userId})
+    return UserModel1.findById({_id: userId})
         .then(function (user) {
             console.log('delete user');
             console.log(user);
@@ -68,7 +68,7 @@ function recursiveDelete(websitesOfUser, userId) {
     if(websitesOfUser.length == 0){
         // All websites of user successfully deleted
         // Delete the user
-        return UserModel.remove({_id: userId})
+        return UserModel1.remove({_id: userId})
             .then(function (response) {
 
                 if(response.result.n == 1 && response.result.ok == 1){
@@ -91,6 +91,6 @@ function recursiveDelete(websitesOfUser, userId) {
 
 
 }
-    module.exports = UserModel;
+    module.exports = UserModel1;
 
 

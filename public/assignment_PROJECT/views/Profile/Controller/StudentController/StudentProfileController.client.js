@@ -55,6 +55,7 @@
                             for(count = 0; count< vm.mentors1.length; count++){
                                 UserService.findUserById(vm.mentors1[count])
                                     .success(function (mentor_info) {
+
                                         vm.mentors.push(mentor_info);
                                     })
                             }

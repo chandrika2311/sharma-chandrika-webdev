@@ -30,7 +30,7 @@ function createWebsite(userId, website) {
                 console.log('inside function website');
                 console.log(website);
                 console.log(userId);
-                return model.UserModel.findUserById(userId)
+                return model.UserModel1.findUserById(userId)
                     .then(function (user) {
                         console.log('inside website, user');
                         console.log(user);

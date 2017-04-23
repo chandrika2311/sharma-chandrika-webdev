@@ -22,11 +22,11 @@ app.use(cookieParser());
 var passport = require("passport");
 app.use(passport.initialize());
 app.use(passport.session());
-// var assignment = require("./assignment/app.js");
-// assignment(app);
+var assignment = require("./assignment/app.js");
+assignment(app);
 
-var project = require("./assignment_PROJECT/app");
-project(app);
+// var project = require("./assignment_PROJECT/app");
+// project(app);
 
 
 
