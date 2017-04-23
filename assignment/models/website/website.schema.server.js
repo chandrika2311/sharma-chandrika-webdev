@@ -5,7 +5,7 @@
 var mongoose = require('mongoose');
 
 var WebsiteSchema = mongoose.Schema({
-    _user: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'},
+    _user: {type: mongoose.Schema.Types.ObjectId, ref: 'UserModel1'},
     name: String,
     description: String,
     pages:  [{type: mongoose.Schema.Types.ObjectId, ref:'PageModel'}],

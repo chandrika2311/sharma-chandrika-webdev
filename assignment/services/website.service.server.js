@@ -72,7 +72,7 @@ module.exports = function (app, WebsiteModel) {
             .deleteWebsite(websiteId)
             .then(function (response) {
                 if(response.result.n == 1 && response.result.ok == 1){
-                    console.log('success delete')
+                    console.log('success delete');
                     res.sendStatus(200);
                 }
                 else{
