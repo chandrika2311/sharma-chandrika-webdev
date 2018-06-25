@@ -23,6 +23,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Jose G. Annunziato",
-  "license": "ISC"
+  "author": "Chandrika Sharma",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandrika2311/sharma-chandrika-webdev.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/chandrika2311/sharma-chandrika-webdev/issues"
+  },
+  "homepage": "https://github.com/chandrika2311/sharma-chandrika-webdev#readme"
 }

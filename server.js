@@ -28,15 +28,9 @@ assignment(app);
 // var project = require("./assignment_PROJECT/app");
 // project(app);
 
-
-
 //Server listens through port 3000
 var port = process.env.PORT || 3000;
+app.listen(port, function() {
+    console.log('Example app listening on port 3000!')
 
-
-
-
-
-
-
-app.listen(port);
+});
