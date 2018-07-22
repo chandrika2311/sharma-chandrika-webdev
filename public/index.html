@@ -11,123 +11,40 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body {
-            font: 400 15px Lato, sans-serif;
+            font: 400 15px 'Josefin Sans', sans-serif;
             line-height: 1.8;
-            color: white;
+            background: white;
+            color: black;
         }
+
         .font-grey{
 
             color: gray;
         }
-        h2 {
-            font-size: 24px;
-            text-transform: uppercase;
-            color: #303030;
+        h1, h2, h3, h4, h5, h6 {
+            color: #40424a;
+            margin: 0;
+            margin-bottom: 0px;
             font-weight: 600;
-            margin-bottom: 30px;
+            font-family: 'Josefin Sans', sans-serif;
         }
-        h4 {
-            font-size: 19px;
-            line-height: 1.375em;
-            color: #303030;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-        .jumbotron {
-            background: url("chandrika.jpg") no-repeat;
-            background-size: cover;
-            background-position: 0% 25%;
-            align-items: center;
-            background-size:100%;
-            color: #fff;
-            padding: 100px 25px;
-            font-family: Montserrat, sans-serif;
-        }
+
         .container-fluid {
             padding: 30px 30px;
         }
         .bg-grey {
-            background-color: #691DB3;
-        }
-        .logo-small {
-            color: #FFB01F;
-            font-size: 50px;
-        }
-        .logo {
-            color: #FFB01F;
-            font-size: 200px;
-        }
-        .thumbnail {
-            padding: 0 0 15px 0;
-            border: none;
-            border-radius: 0;
+            background-color:black;
         }
         .thumbnail img {
             width: 100%;
             height: 100%;
             margin-bottom: 10px;
         }
-        .carousel-control.right, .carousel-control.left {
-            background-image: none;
-            color: #FFB01F;
-        }
-        .carousel-indicators li {
-            border-color: #FFB01F;
-        }
-        .carousel-indicators li.active {
-            background-color: #FFB01F;
-        }
-        .item h4 {
-            font-size: 19px;
-            line-height: 1.375em;
-            font-weight: 400;
-            font-style: italic;
-            margin: 70px 0;
-        }
-        .item span {
-            font-style: normal;
-        }
-        .panel {
-            border: 1px solid #FFB01F;
-            border-radius:0 !important;
-            transition: box-shadow 0.5s;
-        }
-        .panel:hover {
-            box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-        }
-        .panel-footer .btn:hover {
-            border: 1px solid #FFB01F;
-            background-color: #fff !important;
-            color: #FFB01F;
-        }
-        .panel-heading {
-            color: #fff !important;
-            background-color: #FFB01F !important;
-            padding: 25px;
-            border-bottom: 1px solid transparent;
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-        .panel-footer {
-            background-color: white !important;
-        }
-        .panel-footer h3 {
-            font-size: 32px;
-        }
-        .panel-footer h4 {
-            color: #aaa;
-            font-size: 14px;
-        }
-        .panel-footer .btn {
-            margin: 15px 0;
-            background-color: #FFB01F;
-            color: #fff;
-        }
+
         .navbar {
             margin-bottom: 0;
             background-color: #FFB01F;
@@ -137,7 +54,7 @@
             line-height: 1.42857143 !important;
             letter-spacing: 4px;
             border-radius: 0;
-            font-family: Montserrat, sans-serif;
+
         }
         .navbar li a, .navbar .navbar-brand {
             color: #fff !important;
@@ -150,39 +67,22 @@
             border-color: transparent;
             color: #fff !important;
         }
+        .navbar-toggle .icon-bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 1px;
+            color: white;
+            border-color: white;
+            background-color: white;
+        }
         footer .glyphicon {
             font-size: 20px;
             margin-bottom: 20px;
             color: #FFB01F;
         }
-        .slideanim {visibility:hidden;}
-        .slide {
-            animation-name: slide;
-            -webkit-animation-name: slide;
-            animation-duration: 1s;
-            -webkit-animation-duration: 1s;
-            visibility: visible;
-        }
-        @keyframes slide {
-            0% {
-                opacity: 0;
-                transform: translateY(70%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0%);
-            }
-        }
-        @-webkit-keyframes slide {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateY(70%);
-            }
-            100% {
-                opacity: 1;
-                -webkit-transform: translateY(0%);
-            }
-        }
+
+
         @media screen and (max-width: 768px) {
             .col-sm-4 {
                 text-align: center;
@@ -198,6 +98,106 @@
                 font-size: 150px;
             }
         }
+
+        .row1 {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .offset-xl-2 {
+            margin-top: 40px;
+            margin-left: 16.666667%;
+        }
+        .col-xl-7 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 58.333333%;
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+        .container1{
+
+        }
+        .container1 ul{
+
+            list-style:none;
+            margin : 0;
+            padding:0;
+            position: relative;
+        }
+        .container1 ul:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 100%;
+            border: 1px dashed #FFB01F ;
+        }
+        .container1 ul li{
+            margin: 70px 60px;
+            position: relative;
+
+
+        }
+        .container1 ul li span{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -60px;
+            width: 0px;
+            height: 100%;
+            border: 1px solid #FFB01F ;
+
+        }
+        .container1 ul li span:before, .container1 ul li span:after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            border: 2px solid #FFB01F;
+            position: absolute;
+            border-radius: 100%;
+            left: -7px;
+            background: #CF0E47;
+        }
+        .container1 ul li span:before{
+            top:-10px;
+        }
+        .container1 ul li span:after{
+            top:100%;
+        }
+
+        .container0{
+            background: #dcac15;
+
+        }
+        .container0 ul{
+            display:flex;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%  );
+        }
+        .container0 ul li{
+            list-style: none;
+        }
+        .container0 ul li a{
+            width: 80px;
+            height: 80px;
+            background: white;
+            text-align: center;
+            line-height: 80px;
+            font-size: 35px;
+            margin: 0 10px;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+
+        }
+
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -205,134 +205,222 @@
 <nav class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+            <a class="navbar-brand" href="#myPage">Call me Chan</a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage">Call me Chan</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">RESUME</a></li>
-                <li><a href="#work">WORK</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+            <ul class="nav navbar-nav navbar-collapse collapse" id="myNavbar">
+
+
+                <li><a href="#work">Work</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#acad">Academic Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </div>
 </nav>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <img src = "chandrika.jpg" class="img-responsive">
+        </div>
+        <div  class="col-sm-6 col-md-6 col-lg-6">
+            <h3>Motivation</h3>
+            <div class="row font-grey">
+                “make a radical change in your lifestyle and begin to boldly do things which you may
+                previously never have thought of doing, or been too hesitant to attempt. So many people
+                live within unhappy circumstances and yet will not take the initiative to change their
+                situation because they are conditioned to a life of security, conformity, and conservation,
+                all of which may appear to give one peace of mind, but in reality nothing is more damaging
+                to the adventurous spirit within a man than a secure future. The very basic core of a man's
+                living spirit is his passion for adventure. The joy of life comes from our encounters with new
+                experiences, and hence there is no greater joy than to have an endlessly changing horizon, for
+                each day to have a new and different sun. If you want to get more out of life, you must lose your
+                inclination for monotonous security and adopt a helter-skelter style of life that will at first
+                appear to you to be crazy. But once you become accustomed to such a life you will see its full
+                meaning and its incredible beauty.”
+                ― Jon Krakauer, Into the Wild
+            </div>
+        </div>
 
-<div class="jumbotron text-center">
-    <h1>Chandrika Sharma</h1>
-    <p>Happiness is only real once shared</p>
-    <br><br>
 
-
-</div>
-<div id="about" class="container-fluid font-grey">
-    <h3>Motivation</h3>
-    <div class="row font-grey">
-        “make a radical change in your lifestyle and begin to boldly do things which you may
-        previously never have thought of doing, or been too hesitant to attempt. So many people
-        live within unhappy circumstances and yet will not take the initiative to change their
-        situation because they are conditioned to a life of security, conformity, and conservation,
-        all of which may appear to give one peace of mind, but in reality nothing is more damaging
-        to the adventurous spirit within a man than a secure future. The very basic core of a man's
-        living spirit is his passion for adventure. The joy of life comes from our encounters with new
-        experiences, and hence there is no greater joy than to have an endlessly changing horizon, for
-        each day to have a new and different sun. If you want to get more out of life, you must lose your
-        inclination for monotonous security and adopt a helter-skelter style of life that will at first
-        appear to you to be crazy. But once you become accustomed to such a life you will see its full
-        meaning and its incredible beauty.”
-        ― Jon Krakauer, Into the Wild
     </div>
 </div>
+<!--<div class="container0">-->
+    <!--<div class="row">-->
+    <!--<ul>-->
+        <!--<li><a href=""><i class="fa fa-pinterest"></i></a></li>-->
+        <!--<li><a href=""><i class="fa fa-linkedin"></i></a></li>-->
+        <!--<li><a href=""><i class="fa fa-facebook"></i></a></li>-->
+        <!--<li><a href=""><i class="fa fa-twitter"></i></a></li>-->
 
-<div class="container-fluid bg-grey">
-    <div class="row">
-        <div class="container">
-            <h1>CHANDRIKA SHARMA</h1><br>
-                242 S. Huntington Ave, Boston, MA 02130 |857-316-8796<br>
-                Seeking Internships: Summer 2017/Winter Co-Op<br>
-                ~ http://www.linkedin.com/in/chandrika-sharma | sharma.chan@husky.neu.edu ~ https://github.com/chandrika2311
-            </strong>
+
+
+    <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+<section id="work">
+<div class="container1" style="background: lemonchiffon">
+        <div class="row1"style ="margin-top: 15px;">
+            <div class="col-xl-7 offset-xl-2">
+                <div class="section-title" >
+                    <h2 style ="font-size: 60px;">Work Experience</h2>
+                </div>
+                <ul>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2018</h2>
+                        <h3>Northeastern University, Boston</h3>
+                        <h4>Research Assistant – mHealth Research Group</h4>
+                        <p>Extended an on-demand cloud platform on AWS that ran custom algorithms, in a distributed fashion, to scale up to process multi-TB accelerometer sensor dataset. Used data mining techniques to analyze the sensor data to identify faulty/non-faulty datasets and determine active/non-active participants in an activity tracking research.
+                        </p>
+                    </li>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2017</h2>
+                        <h3>New York Life Labs – New York</h3>
+                        <h4>Cloud Software Engineering Co-op</h4>
+                        <p>Developed a application for Face to BMI calculation for improving insurance underwriting process based on data mined from Reddit (1000 images). Used Pre-trained CNN model VGG Faces for feature engineering and trained Epsilon SVM Regression Model to predict the BMI.<br>
+                            Developed the NYL Ventures website through its entire development lifecycle, Involved in design decisions during the website’s lifecycle in-terms of content building and component placement.
+                        </p>
+                    </li>
+
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2015-2016</h2>
+                        <h3>Ernst & Young – Gurgaon, India</h3>
+                        <h4>Associate Consultant</h4>
+                        <p>Created a web portal to manage software licenses for all vendors (Microsoft, Adobe, etc.) using Bootstrap, MySQL, PHP. This kept track of softwares purchased, expiry date, return on investment, license expiry dates, vendor audit dates.</p>
+                    </li>
+                </ul>
+            </div>
+
+
         </div>
 
-        <hr>
-        <div class="container">
-        TECHNICAL KNOWLEDGE:<br>
-        Programming Languages     : C, Dr. Racket, C++, Java, Python, PHP, ABAP <br>
-        Web Technologies          : Java Script, HTML, CSS, node.js, Angular JS, Bootstrap<br>
-        Server Technologies       : AWS, Heroku, NPM HTTPS Server<br>
-        Database Technology       : My SQL, SAP HANA In-Memory Database, Oracle, NoSQL, Database design, MongoDB Hibernate<br>
-        Other Tools/Technologies  : SAP, SAP HANA, Open-CV, Github, ACL<br>
-        </div>
-        <hr>
-
-
-        <ul>
-            ACADEMIC PROJECTS:
-            <li>Student-Mentor Portal – Northeastern University<br>
-                Portal to get student and professors closer to create a space where students can be mentored by professors through
-                participation in projects and courses.<br>
-                APIs used: Google+, Facebook, Udacity<br>
-                Technology stack: MEAN Stack<br>
-
-            </li>
-            <br>
-            <li>
-                Pacman – Northeastern University<br>
-                Used Artificial Intelligence techniques for implementation of Pacman using Python<br>
-                Implemented search techniques like BFS, DFS, UCS, A*, Mini-max, Alpha-Beta Pruning,<br>
-                Expectimax Algorithms, Value  Iteration and machine learning techniques like Q-learning, Perceptron,<br>
-                Naïve Bayes Nets and MIRA concepts<br>
-            </li>
-            <br>
-            <li>
-                Restaurant recommendation using Artificial Intelligence – Northeastern University<br>
-                Used AI techniques to designed an algorithm to personalize suggestions of restaurants to the <br>
-                users of a restaurant search and discovery service using Perceptron and SVM data classifiers.<br>
-                This recommendation algorithm learns from user preferences to generate a list of personalized<br>
-                suggestions to improve their search experience.<br>
-                Technologies used: Python, NumPy SVM and Perceptron library, Data collected through user survey.<br>
-
-            </li>
-            <br>
-            <li>
-                Automatic Theft Security System – MSRIT<br>
-                Implemented Viola Jones Algorithm on Open-CV to produce facial recognition system to prevent theft.<br>
-            </li>
-        </ul>
     </div>
-</div>
+</section>
+<section id ="education">
+    <div class="container1" style="background: #dff0d8">
+    <div class="row1">
+        <div class="col-xl-7 offset-xl-2">
+            <div class="section-title" >
+                <h2 style ="font-size: 60px;">Education</h2>
+            </div>
+            <ul>
+                <li>
+                    <span></span>
+                    <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2018</h2>
+                    <h3>Northeastern University, Boston</h3>
+                    <p style="font-style: italic;">Master of Science in Computer Science</p>
+                </li>
+                <li>
+                    <span></span>
+                    <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2013</h2>
+                    <h3>M.S. Ramaiah Institute of Technology, Bangalore, India</h3>
+                    <p style="font-style: italic;">Bachelors in Technology in Computer Science and Engineering</p>
+                </li>
 
-<!-- Container (Services Section) -->
-<div id="work" class="container-fluid text-center">
-    <h2>WORK</h2>
-    <h4>My Semester's Hardwork</h4>
-    <br>
-
-    <a href="assignment_PROJECT/index.html">Project</a><br>
-    <a href="assignment/index.html">Assignments</a><br>
-    <a href="https://github.com/chandrika2311/sharma-chandrika-webdev">My public repository at GitHub.com</a><br>
-</div>
+            </ul>
+        </div>
 
 
+    </div>
+    </div>
 
 
+</section>
 
-<div id="contact" class="container-fluid bg-grey">
-    <h2 class="text-center">CONTACT</h2>
+<section id = "acad">
+    <div class="container1"style="background: aliceblue;">
+        <div class="row1">
+            <div class="col-xl-7 offset-xl-2">
+                <div class="section-title" >
+                    <h2 style ="font-size: 60px;">Academic Projects</h2>
+                </div>
+                <ul>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2018</h2>
+                        <h3>Product Recommendation App using Graph Database</h3>
+                        <p style="font-style: italic;">Product Recommendation system using Neo4j graph database. Technology used: Neo4j, Java, Cypher</p>
+                    </li>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2018</h2>
+                        <h3>Foreground-background classification in high-resolution brain scans using MapReduce</h3>
+                        <p style="font-style: italic;">Wrote scripts in Scala to perform preprocessing of images by mirroring and rotation along the y-axis. Used Spark ML Library for training a Random Forest Classifier to perform prediction of foreground or background points.
+                            Technology used: Scala, Spark ML-Lib, AWS EMR, AWS S3
+                        </p>
+                    </li>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2018</h2>
+                        <h3>Question-Answering system using Wikipedia</h3>
+                        <p style="font-style: italic;">Developed open domain Wikipedia Question Answering system with match-LSTM and Answer-Pointer model using Tensorflow. Technology Used: Python, NLP Techniques, Tensor Flow
+
+                        </p>
+                    </li>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2018</h2>
+                        <h3>Implemented PageRank in Hadoop and Spark</h3>
+                        <p style="font-style: italic;">Implemented an iterative PageRank algorithm on original 2006 Wikipedia data dump using MapReduce concepts
+                            Technology Used: AWS-S3, AWS-EMR, Spark, Scala, Hadoop
+
+
+                        </p>
+                    </li>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2017</h2>
+                        <h3>Student-Mentor Portal MEAN Stack</h3>
+                        <p style="font-style: italic;">Portal to get student and professors closer to create a space where students can be mentored by professors through
+                            participation in projects and courses. APIs used: LinkedIn, Facebook, edX.
+                            Technology used: MongoDb, Express, Angular, nodejs
+
+                        </p>
+                    </li>
+                    <li>
+                        <span></span>
+                        <h2 style="color: #FFB01F;font-size: 72px;margin-bottom: 10px;">2016</h2>
+                        <h3>Restaurant recommendation App Using AI</h3>
+                        <p style="font-style: italic;">Used AI techniques to give personalized suggestions of restaurants to the users of a restaurant search and discovery
+                            system by learning from user preferences using Perceptron and SVM data classifiers. Technology used: NumPy, AI
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>
+
+
+<div class="container" id="contact" style="height: 500px;width: 80%;align-content: left;margin:0px;">
     <div class="row">
-        <div class="col-sm-8">
-            <p>Contact us and we'll get back to you within 24 hours.</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span> Boston, US</p>
-            <p><span class="glyphicon glyphicon-phone"></span> +1 8573168796</p>
-            <p><span class="glyphicon glyphicon-envelope"></span> chandrika2311@gmail.com</p>
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <img src = "contact_picture.jpeg" class="img-responsive">
         </div>
-        <div class="col-sm-4">
-            <img src="profile.jpg">
+        <div id="about" class="col-sm-6 col-md-6 col-lg-6">
+            <div class="row" style="align-content: center;margin-top: 20%;margin-left: 40%">
+                <p style="font-size: 50px">Contact Me</p>
+                <p style="font-size: 20px"><span class="glyphicon glyphicon-map-marker"></span> Boston, US</p>
+                <p style="font-size: 20px"><span class="glyphicon glyphicon-phone"></span> +1 (617)-755-3692</p>
+                <p style="font-size: 20px"><span class="glyphicon glyphicon-envelope"></span> chandrika2311@gmail.com</p>
+            </div>
         </div>
+
+
     </div>
 </div>
 
@@ -343,33 +431,4 @@
 </footer>
 
 </body>
-</html>
-
-
-<!--<body>-->
-<!--<div class = "container" id = "bodyProfile">-->
-<!--<div class="container-fluid">-->
-<!--<h1>Web Dev Course Home Page </h1>-->
-<!--<p>-->
-<!--This homepage belongs to Chandrika Sharma-->
-<!--</p>-->
-<!--</div>-->
-<!--<div class="container">-->
-<!--<h2>Required links</h2>-->
-<!--<ul class="list-group">-->
-<!--<li class="list-group-item">-->
-<!--<a href="assignment_PROJECT/index.html">Project</a>-->
-<!--</li>-->
-<!--<li class="list-group-item">-->
-<!--<a href="assignment/index.html">Assignment</a>-->
-<!--</li>-->
-<!--<li class="list-group-item">-->
-<!--<a href="test/index.html">Test MongoDB</a>-->
-<!--</li>-->
-<!--<li class="list-group-item">-->
-<!--<a href="https://github.com/chandrika2311/sharma-chandrika-webdev">Your public repository at GitHub.com</a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</body>-->
 </html>
