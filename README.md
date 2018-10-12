@@ -6,5 +6,5 @@
 4. mongod
 5. node server.js
 6. browse to localhost:3000
-7. Heroku App: https://sharma-chandrika-webdevelop.herokuapp.com/
+7. Heroku App: https://chandrika-sharma.herokuapp.com/
 
