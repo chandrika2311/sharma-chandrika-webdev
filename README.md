@@ -1,4 +1,4 @@
-# web-dev-template
+# web-dev-template-An Amazing Project
 
 1. git clone https://github.com/chandrika2311/sharma-chandrika-webdev.git
 2. cd web-dev-template
